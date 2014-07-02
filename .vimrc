@@ -1,4 +1,4 @@
-" General 
+" General
 set nocompatible                " use vim settings over vi | not sure if this is needed?
 syntax enable                   " turn on syntax highlighting
 set encoding=utf-8
