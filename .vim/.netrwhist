@@ -1,5 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
-let g:netrw_dirhist_1='/home/00919918/puppetcode/modules/modules/profiles/manifests/xap'
-let g:netrw_dirhist_2='/home/00919918/puppetcode/modules/modules/profiles/manifests/base'
-let g:netrw_dirhist_3='/home/00919918/puppetcode'
