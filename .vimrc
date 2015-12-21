@@ -33,3 +33,10 @@ let g:solarized_termcolors=256
 let g:solarized_termtrans=1
 set background=dark
 colorscheme solarized
+let g:vim_markdown_folding_disabled=1
+
+" Highlight whitespace
+highlight LiteralTabs ctermbg=darkgreen guibg=darkgreen
+match LiteralTabs /\s\  /
+highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
+match ExtraWhitespace /\s\+$/
