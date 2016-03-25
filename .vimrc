@@ -1,13 +1,15 @@
 " General
-set nocompatible                " use vim settings over vi | not sure if this is needed?
+set nocompatible                " use vim settings over vi
 syntax enable                   " turn on syntax highlighting
+syntax on
 set encoding=utf-8
 set showcmd                     " bottom line will show information about command
 filetype plugin indent on       " load file type plugins & indentation
 set history=50                  " save 50 lines of history
 set ruler                       " ruler
 set number                      " show line numbers
-syntax on
+set cursorline                  " highlight current line
+set wildmenu                    " visual autocomplete for command menu
 execute pathogen#infect()
 
 " Whitespace
@@ -28,12 +30,8 @@ set smartcase                   " unless the search contains 1+ capital letter
 :nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 
 " Color
-syntax enable
-let g:solarized_termcolors=256
-let g:solarized_termtrans=1
 set background=dark
-colorscheme solarized
-let g:vim_markdown_folding_disabled=1
+colorscheme Tomorrow-Night-Bright
 
 " Highlight whitespace
 highlight LiteralTabs ctermbg=darkgreen guibg=darkgreen
