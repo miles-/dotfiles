@@ -1,9 +1,8 @@
-dotfiles
-========
+## dotfiles
 
 These are my dotfiles. \o/
 
-** install **
+**install**
 ```console
 $ make
 ```
