@@ -8,7 +8,7 @@ bin:
 
 i3:
 	# add aliases for i3
-	ln -fs $(CURDIR)/i3/.conkyrc ${HOME}/.conkyrc
+	ln -fs $(CURDIR)/i3/conkyrc ${HOME}/.conkyrc
 	ln -fs $(CURDIR)/i3/config ${HOME}/.config/i3/config
 
 tmux:
