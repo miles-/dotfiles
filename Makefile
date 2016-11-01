@@ -3,6 +3,7 @@
 all: bin i3 tmux vim x zsh
 
 bin:
+	mkdir -p ${HOME}/bin
 	# add aliases for things in bin
 	ln -fs $(CURDIR)/bin/conky-i3bar ${HOME}/bin/conky-i3bar
 
