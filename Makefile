@@ -8,6 +8,7 @@ bin:
 	ln -fs $(CURDIR)/bin/conky-i3bar ${HOME}/bin/conky-i3bar
 
 i3:
+	mkdir -p ${HOME}/.config
 	# add aliases for i3
 	ln -fs $(CURDIR)/i3/conkyrc ${HOME}/.conkyrc
 	ln -fs $(CURDIR)/i3/config ${HOME}/.config/i3/config
@@ -27,6 +28,7 @@ x:
 	# add aliases for X
 	ln -fs $(CURDIR)/x/Xdefaults ${HOME}/.Xdefaults
 	ln -fs $(CURDIR)/x/xinitrc ${HOME}/.xinitrc
+	sudo ln -fs $(CURDIR)/x/30-touchpad.conf /etc/X11/xorg.conf.d/30-touchpad.conf
 
 
 zsh:
