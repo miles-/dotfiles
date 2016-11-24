@@ -93,7 +93,7 @@ bindsym $mod+a focus parent
 
 # switch to workspace
 bindsym $mod+1 workspace 1:term
-bindsym $mod+2 workspace 2:email
+bindsym $mod+2 workspace 2:slack
 bindsym $mod+3 workspace 3:www
 bindsym $mod+4 workspace 4:music
 bindsym $mod+5 workspace 5
@@ -105,7 +105,7 @@ bindsym $mod+0 workspace 10
 
 # default workspaces
 workspace "1:term" output primary
-workspace "2:email" output primary
+workspace "2:slack" output primary
 workspace "3:www" output primary
 workspace "4:music" output primary
 
@@ -114,13 +114,13 @@ for_window [class="^Pidgin$" window_role="^conversation$"] resize grow width 0 p
 # startup software
 exec --no-startup-id volumeicon
 #exec --no-startup-id i3-msg 'workspace 1:term; exec /usr/bin/urxvt'
-#exec --no-startup-id i3-msg 'workspace 2:email; exec /usr/bin/thunderbird; sleep 8'
+#exec --no-startup-id i3-msg 'workspace 2:slack; exec /usr/bin/thunderbird; sleep 8'
 #exec --no-startup-id i3-msg 'workspace 3:www; exec /usr/bin/chromium; sleep 5'
 #exec --no-startup-id i3-msg 'workspace 4:music; exec /usr/bin/spotify'
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace 1:term
-bindsym $mod+Shift+2 move container to workspace 2:email
+bindsym $mod+Shift+2 move container to workspace 2:slack
 bindsym $mod+Shift+3 move container to workspace 3:www
 bindsym $mod+Shift+4 move container to workspace 4:music
 bindsym $mod+Shift+5 move container to workspace 5
@@ -174,11 +174,11 @@ bar {
         status_command ~/bin/conky-i3bar
 }
 
-bindsym Print exec scrot -e 'mv $f ~/Pictures/Screenshots/$f'
+bindsym Print exec scrot -e 'mv $f ~/Pictures/Screenshots/$(date +%F-%T).png'
 bindsym --release $mod+Print exec scrot -s -e 'mv $f ~/Pictures/Screenshots/$f'
 
 # Wallpaper
-exec feh --bg-scale ~/Pictures/.wallpaper/bg.png
+exec feh --bg-scale ~/Pictures/.wallpaper/bg.jpg
 
 # Multimedia Keys
 # increase volume
@@ -186,8 +186,15 @@ bindsym XF86AudioRaiseVolume exec amixer -q set Master 5%+ unmute
 # decrease volume
 bindsym XF86AudioLowerVolume exec amixer -q set Master 5%- unmute
 # mute volume
-bindsym XF86AudioMute exec amixer -q set Master mute
+bindsym XF86AudioMute exec amixer -q set Master toggle
 # pause / play / next / previous
 bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
+
+# screen brightness
+bindsym XF86MonoBrightnessUp exec xbacklight -inc 20
+bindsym XF86MonoBrightnessDown exec xbacklight -dec 20
+
+# lock screen
+bindsym $mod+o exec "lock -gpf Dejavu-Sans-Mono -- scrot -z"

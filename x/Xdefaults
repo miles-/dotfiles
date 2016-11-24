@@ -2,7 +2,8 @@
 ! Xft settings
 !-------------------------------------------------------------------------------
 
-Xft.dpi:                    96 Xft.antialias:              false
+Xft.dpi:                    200
+Xft.antialias:              true
 Xft.rgba:                   rgb
 Xft.hinting:                true
 Xft.hintstyle:              hintslight
@@ -27,10 +28,8 @@ URxvt.lineSpace:            0
 
 ! Fonts
 URxvt.allow_bold:           false
-/* URxvt.font:                 -*-terminus-medium-r-normal-*-12-120-72-72-c-60-iso8859-1 */
-#URxvt*font: xft:monospace:pixelsize=14
-URxvt*font: xft:DejavuSansMono:pixelsize=15
-URxvt*boldFont: xft:Monospace:pixelsize=15
+URxvt*font: xft:DejavuSansMono:pixelsize=28
+URxvt*boldFont: xft:Monospace:pixelsize=28
 
 ! Fix font space
 URxvt*letterSpace: -1
