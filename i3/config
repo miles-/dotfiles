@@ -15,8 +15,8 @@ set $mod Mod1
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:DejaVu Sans Mono 10
-font pango:FontAwesome 10
+font pango:DejaVu Sans Mono 20
+font pango:FontAwesome 20
 
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -170,7 +170,7 @@ bindsym $mod+r mode "resize"
 #        tray_output primary
 #}
 bar {
-        font pango:FontAwesome 10
+        font pango:FontAwesome 20
         status_command ~/bin/conky-i3bar
 }
 
