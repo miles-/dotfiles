@@ -29,6 +29,7 @@ x:
 	ln -fs $(CURDIR)/x/Xdefaults ${HOME}/.Xdefaults
 	ln -fs $(CURDIR)/x/xinitrc ${HOME}/.xinitrc
 	sudo ln -fs $(CURDIR)/x/30-touchpad.conf /etc/X11/xorg.conf.d/30-touchpad.conf
+	sudo ln -fs $(CURDIR)/x/xorg.conf /etc/X11/xorg.conf
 
 
 zsh:
