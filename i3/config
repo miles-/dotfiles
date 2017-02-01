@@ -113,10 +113,8 @@ for_window [class="^Pidgin$" window_role="^conversation$"] resize grow width 0 p
 
 # startup software
 exec --no-startup-id volumeicon
-#exec --no-startup-id i3-msg 'workspace 1:term; exec /usr/bin/urxvt'
-#exec --no-startup-id i3-msg 'workspace 2:slack; exec /usr/bin/thunderbird; sleep 8'
-#exec --no-startup-id i3-msg 'workspace 3:www; exec /usr/bin/chromium; sleep 5'
-#exec --no-startup-id i3-msg 'workspace 4:music; exec /usr/bin/spotify'
+exec --no-startup-id nm-applet
+exec --no-startup-id dunst
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace 1:term

@@ -8,7 +8,7 @@ bin:
 	ln -fs $(CURDIR)/bin/conky-i3bar ${HOME}/bin/conky-i3bar
 
 i3:
-	mkdir -p ${HOME}/.config
+	mkdir -p ${HOME}/.config/i3
 	# add aliases for i3
 	ln -fs $(CURDIR)/i3/conkyrc ${HOME}/.conkyrc
 	ln -fs $(CURDIR)/i3/config ${HOME}/.config/i3/config
@@ -18,6 +18,7 @@ tmux:
 	ln -fs $(CURDIR)/tmux/tmux.conf ${HOME}/.tmux.conf
 
 vim:
+	mkdir -p ${HOME}/.vim
 	# add aliases for vim
 	ln -fs $(CURDIR)/vim/vimrc ${HOME}/.vimrc
 	ln -sfn $(CURDIR)/vim/autoload/ ${HOME}/.vim/

@@ -25,3 +25,5 @@ set ignorecase                  " searches ignore case
 set smartcase                   " unless the search contains 1+ capital letter
 
 colorscheme Tomorrow-Night-Bright
+
+set laststatus=2
