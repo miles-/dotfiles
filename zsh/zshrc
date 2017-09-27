@@ -50,7 +50,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git battery)
+plugins=(git battery kubectl alias-tips)
 
 # User configuration
 
@@ -61,16 +61,12 @@ export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/site_perl:/usr/bin
 
 source $ZSH/oh-my-zsh.sh
 
+source <(helm completion zsh)
+
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
+export EDITOR='vim'
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
@@ -83,7 +79,42 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+alias k="kubectl"
+alias describe="k describe"
+alias get="k get"
+alias create="k create"
+alias apply="k apply"
+alias delete="k delete"
+alias logs="k logs"
+alias pods="get pods"
+alias services="get svc"
+alias deployments="get deployments"
+alias dep="get deployments" # NON-STANDARD!!
+alias replicasets="get rs"
+alias replicationcontrollers="get rc"
+alias rc="get rc"
+alias nodes="get nodes"
+alias limitranges="get limitranges"
+alias limits="get limitranges"
+alias events="get events"
+alias persistentvolumes="get pv"
+alias pv="get pv"
+alias persistentvolumeclaims="get pvc"
+alias pvc="get pvc"
+alias namespaces="get ns"
+alias ingresses="get ing"
+alias ing="get ing"
+alias configmaps="get configmaps"
+alias secrets="get secrets"
+alias sandbox="kubectl config use-context sandbox"
+alias staging="kubectl config use-context staging"
+alias production="kubectl config use-context production"
+alias clip="xclip -selection clipboard"
 
 DEFAULT_USER=miles
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/miles/google-cloud-sdk/path.zsh.inc' ]; then source '/home/miles/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/miles/google-cloud-sdk/completion.zsh.inc' ]; then source '/home/miles/google-cloud-sdk/completion.zsh.inc'; fi

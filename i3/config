@@ -15,8 +15,8 @@ set $mod Mod1
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:DejaVu Sans Mono 20
-font pango:FontAwesome 20
+font pango:DejaVu Sans Mono 10
+font pango:FontAwesome 10
 
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -168,12 +168,11 @@ bindsym $mod+r mode "resize"
 #        tray_output primary
 #}
 bar {
-        font pango:FontAwesome 20
+        font pango:FontAwesome 10
         status_command ~/bin/conky-i3bar
 }
 
-bindsym Print exec scrot -e 'mv $f ~/Pictures/Screenshots/$(date +%F-%T).png'
-bindsym --release $mod+Print exec scrot -s -e 'mv $f ~/Pictures/Screenshots/$f'
+bindsym --release Print exec import ~/screenshots/$(date +%F-%T).png
 
 # Wallpaper
 exec feh --bg-scale ~/Pictures/.wallpaper/bg.jpg
@@ -195,4 +194,4 @@ bindsym XF86MonBrightnessUp exec xbacklight -inc 10
 bindsym XF86MonBrightnessDown exec xbacklight -dec 10
 
 # lock screen
-bindsym $mod+o exec "lock -gpf Dejavu-Sans-Mono -- scrot -z"
+bindsym $mod+o exec "i3lock -c 000000"

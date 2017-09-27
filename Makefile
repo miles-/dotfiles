@@ -1,6 +1,6 @@
-.PHONY: all bin i3 tmux vim x zsh
+.PHONY: all bin i3 dunst tmux vim x zsh
 
-all: bin i3 tmux vim x zsh
+all: bin i3 dunst tmux vim x zsh
 
 bin:
 	mkdir -p ${HOME}/bin
@@ -13,8 +13,13 @@ i3:
 	ln -fs $(CURDIR)/i3/conkyrc ${HOME}/.conkyrc
 	ln -fs $(CURDIR)/i3/config ${HOME}/.config/i3/config
 
+dunst:
+	mkdir -p ${HOME}/.config/dunst
+	# add alias for dunst
+	ln -fs $(CURDIR)/dunst/dunstrc ${HOME}/.config/dunst/dunstrc
+
 tmux:
-	# add aliases for tmux
+	# add alias for tmux
 	ln -fs $(CURDIR)/tmux/tmux.conf ${HOME}/.tmux.conf
 
 vim:
@@ -34,6 +39,6 @@ x:
 
 
 zsh:
-	# add alises for zsh
+	# add aliases for zsh
 	ln -fs $(CURDIR)/zsh/zprofile ${HOME}/.zprofile
 	ln -fs $(CURDIR)/zsh/zshrc ${HOME}/.zshrc

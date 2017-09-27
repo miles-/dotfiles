@@ -28,11 +28,14 @@ URxvt.lineSpace:            0
 
 ! Fonts
 URxvt.allow_bold:           false
-URxvt*font: xft:DejavuSansMono:pixelsize=28,xft:Noto Emoji:pixelsize=28
+URxvt*font: xft:Dejavu Sans Mono:pixelsize=26,\
+            xft:Noto Emoji:pixelsize=28,\
+            xft:Source Code Pro:pixelsize=28, \
+            xft:Monospace:pixelsize=28
 URxvt*boldFont: xft:Monospace:pixelsize=28
 
 ! Fix font space
-URxvt*letterSpace: -1
+URxvt*letterSpace: 0
 
 ! Scrollbar
 URxvt.scrollStyle:          rxvt
@@ -47,6 +50,7 @@ URxvt.url-launcher:         /usr/bin/google-chrome-stable
 URxvt.cursorBlink:          true
 URxvt.cursorColor:          #657b83
 URxvt.cursorUnderline:      false
+! Urxvt.cursor.size:          32
 
 ! Pointer
 URxvt.pointerBlank:         true
