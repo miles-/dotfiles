@@ -11,11 +11,11 @@ TEXT
 [
 {"full_text": "${execpi 3600 ~/.scripts/weather.sh 11231}", "color":"\#83ccd2"},
 {"full_text": "updates: ${execpi 3600 checkupdates | wc -l}", "color":"\#00FFFF"},
-{"full_text":": ${exec ~/.scripts/spotify-nowplaying.sh }","color":"\#89b859"},
+${if_running spotify} {"full_text":": ${exec ~/.scripts/spotify-nowplaying.sh }","color":"\#89b859"}, ${endif}\
 {"full_text": ": ${cpu}%", "color":"\#cf6a4c"},
 {"full_text": ": $mem","color":"\#cda869"},
 {"full_text": "${exec ~/.scripts/bat_icon.sh}", "color":"\#254AB8"},
-${if_up wlp58s0} { "full_text" : " (${wireless_essid wlp58s0}) ${addr wlp58s0}" , "color" : "\#00cc00" }, ${else}\
+${if_up wlp58s0} { "full_text" : "(${wireless_essid wlp58s0}) ${addr wlp58s0}" , "color" : "\#00cc00" }, ${else}\
     ${if_up ens3f1} { "full_text" : "Eth: ${addr ens3f1}" , "color" : "\#00cc00" }, ${else}\
        ${if_up enp0s20u1} { "full_text" : "USB: ${addr enp0s20u1}" , "color" :"\#00cc00" }, ${else}\
             { "full_text" : "No Network" , "color" : "\#ff0000" },\
@@ -23,4 +23,4 @@ ${if_up wlp58s0} { "full_text" : " (${wireless_essid wlp58s0}) ${addr wlp58s0
     ${endif}\
 ${endif}\
 {"full_text": ": ${time %a, %m / %d / %Y}", "color":"\#afc4db"}, 
-{"full_text": ": ${time %l:%M%p}", "color":"\#8f9d6a"} ],
+{"full_text": "${time %l:%M%p}", "color":"\#8f9d6a"} ],
