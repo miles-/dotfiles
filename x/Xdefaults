@@ -17,16 +17,16 @@ Xft.hintstyle:              hintslight
 
 URxvt.depth:                32
 URxvt.geometry:             90x30
-URxvt.transparent:          true
+URxvt.transparent:          false
 URxvt.saveLines:            999999
 URxvt*.cutchars:            "()*,;<>[]{}|`\"'#│"'`"
 
 ! Fonts
-URxvt*font: xft:Inconsolata:pixelsize=27,style=Medium, xft:Symbola:pixelsize=19,style=Regular
-URxvt*boldFont: xft:Inconsolata:pixelsize=27,style=Bold, xft:Symbola:pixelsize=19,style=Regular
+URxvt*font: xft:Inconsolata:pixelsize=30,style=Medium, xft:Symbola:pixelsize=19,style=Regular
+URxvt*boldFont: xft:Inconsolata:pixelsize=30,style=Bold, xft:Symbola:pixelsize=19,style=Regular
 
 ! Fix font space
-URxvt*letterSpace: 0
+URxvt*letterSpace: 1
 
 ! Scrollbar
 URxvt*scrollTtyOutput:    false
