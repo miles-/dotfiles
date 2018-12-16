@@ -92,4 +92,4 @@ autocmd FileType go nmap <Leader>i <Plug>(go-info)
 let g:go_auto_sameids = 1
 
 let g:WMGraphviz_output="png"
-let g:WMGraphviz_viewer="google-chrome-stable"
+let g:WMGraphviz_viewer="firefox"
