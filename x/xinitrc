@@ -1,3 +1,13 @@
 autocutsel -fork &
 autocutsel -selection PRIMARY -fork &
+
+# settings for Japanese input
+export GTK_IM_MODULE='ibus'
+export QT_IM_MODULE='ibus'
+export XMODIFIERS=@im='ibus'
+
+# toolbar for anthy
+ibus-daemon -drx
+
+# start i3
 exec i3

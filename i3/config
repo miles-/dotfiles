@@ -120,7 +120,7 @@ for_window [class="^Pidgin$" window_role="^conversation$"] resize grow width 0 p
 # startup software
 exec --no-startup-id volumeicon
 exec --no-startup-id nm-applet
-exec --no-startup-id dunst
+exec_always --no-startup-id dunst
 
 # default workspaces for programs
 assign [class="Slack"] $workspace2
