@@ -60,8 +60,8 @@ export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/site_perl:/usr/bin
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
-
 source <(helm completion zsh)
+source /opt/kube-ps1/kube-ps1.sh
 
 # You may need to manually set your language environment
 export LANG=en_US.UTF-8

@@ -1,6 +1,5 @@
 [global]
     font = Monospace 14
-
     
     # Allow a small subset of html markup:
     #   <b>bold</b>
@@ -51,7 +50,6 @@
     
     # Ignore newlines '\n' in notifications.
     ignore_newline = no
-    
     
     # The geometry of the window:
     #   [{width}]x{height}[+/-{x}+/-{y}]
@@ -154,7 +152,6 @@
     color = "#aaaaaa"
 
 [shortcuts]
-
     # Shortcuts are specified as [modifier+][modifier+]...key
     # Available modifiers are "ctrl", "mod1" (the alt-key), "mod2",
     # "mod3" and "mod4" (windows-key).

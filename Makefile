@@ -1,6 +1,6 @@
-.PHONY: all bin i3 dunst tmux vim x zsh
+.PHONY: all bin i3 dunst vim x zsh
 
-all: bin i3 dunst tmux vim x zsh
+all: bin i3 dunst vim x zsh
 
 bin:
 	mkdir -p ${HOME}/bin
@@ -18,10 +18,6 @@ dunst:
 	# add alias for dunst
 	ln -fs $(CURDIR)/dunst/dunstrc ${HOME}/.config/dunst/dunstrc
 
-tmux:
-	# add alias for tmux
-	ln -fs $(CURDIR)/tmux/tmux.conf ${HOME}/.tmux.conf
-
 vim:
 	mkdir -p ${HOME}/.vim
 	# add aliases for vim
@@ -36,7 +32,6 @@ x:
 	ln -fs $(CURDIR)/x/xinitrc ${HOME}/.xinitrc
 	sudo ln -fs $(CURDIR)/x/30-touchpad.conf /etc/X11/xorg.conf.d/30-touchpad.conf
 	sudo ln -fs $(CURDIR)/x/xorg.conf /etc/X11/xorg.conf
-
 
 zsh:
 	# add aliases for zsh
