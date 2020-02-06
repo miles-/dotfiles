@@ -89,7 +89,7 @@ autocmd Filetype go command! -bang AT call go#alternate#Switch(<bang>0, 'tabe')
 autocmd FileType go nmap <Leader>i <Plug>(go-info)
 let g:go_auto_sameids = 1
 
-let g:WMGraphviz_output="png"
-let g:WMGraphviz_viewer="google-chrome-stable"
-
 let g:vim_markdown_folding_disabled = 1
+
+let g:WMGraphviz_output="png"
+let g:WMGraphviz_viewer="firefox"
