@@ -22,8 +22,8 @@ URxvt.saveLines:            999999
 URxvt*.cutchars:            "()*,;<>[]{}|`\"'#│"'`"
 
 ! Fonts
-URxvt*font: xft:Inconsolata:pixelsize=30,style=Medium, xft:Symbola:pixelsize=19,style=Regular
-URxvt*boldFont: xft:Inconsolata:pixelsize=30,style=Bold, xft:Symbola:pixelsize=19,style=Regular
+URxvt*font: xft:Inconsolata Nerd Font Mono:pixelsize=30,style=Medium, xft:Symbola:pixelsize=19,style=Regular
+URxvt*boldFont: xft:Inconsolata Nerd Font Mono:pixelsize=30,style=Bold, xft:Symbola:pixelsize=19,style=Regular
 
 ! Fix font space
 URxvt*letterSpace: 1
@@ -36,18 +36,25 @@ URxvt*scrollStyle:        rxvt
 URxvt*scrollBar:          false
 
 ! Perl extensions
-URxvt.perl-ext-common:      default,resize-font,matcher,resize-font-selection-to-clipboard,clipboard
+URxvt.perl-ext-common:      default,resize-font,matcher,resize-font-selection-to-clipboard,clipboard,url-select,keyboard-select
 URxvt.matcher.button:       1
-URxvt.url-launcher:         /usr/bin/google-chrome-stable
+URxvt.url-launcher:         /usr/bin/firefox
+
+! url-select
+URxvt.keysym.M-u:           perl:url-select:select_next
+URxvt.url-select.launcher:  /usr/bin/firefox
 URxvt.url-select.underline: true
+
+! keyboard-select
+URxvt.keysym.M-Escape:      perl:keyboard-select:activate
 
 ! copy and paste
 URxvt.clipboard.autocopy: true
 URxvt.clipboard.copycmd:  xclip -i -selection clipboard
 URxvt.clipboard.pastecmd: xclip -o selection clipboard
-URxvt.keysm.C-C: perl:clipboard:copy
-URxvt.keysm.C-V: perl:clipboard:paste
-URxvt.keysm.Control-v: perl:clipboard:paste
+URxvt.keysym.C-C: perl:clipboard:copy
+URxvt.keysym.C-V: perl:clipboard:paste
+URxvt.keysym.Control-v: perl:clipboard:paste
 
 ! disable default bindings for control-shift
 URxvt.iso14755: false

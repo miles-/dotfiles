@@ -2,11 +2,12 @@ background no
 out_to_console yes
 out_to_x no
 own_window no
-update_interval 1
+update_interval 15
 total_run_times 0
 short_units yes
 pad_percents 3
 cpu_avg_samples 2
+no_buffers yes
 TEXT
 [
 {"full_text": "${execpi 3600 ~/.scripts/weather.sh 11231}", "color":"\#83ccd2"},

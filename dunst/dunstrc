@@ -1,5 +1,5 @@
 [global]
-    font = Monospace 25
+    font = Monospace 14
 
     
     # Allow a small subset of html markup:

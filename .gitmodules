@@ -49,3 +49,6 @@
 [submodule "vim/bundle/wmgraphviz.vim"]
 	path = vim/bundle/wmgraphviz.vim
 	url = git@github.com:wannesm/wmgraphviz.vim.git
+[submodule "vim/colors/bundle/dracula-theme"]
+	path = vim/colors/bundle/dracula-theme
+	url = git@github.com:dracula/vim.git
