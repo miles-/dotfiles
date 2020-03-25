@@ -54,7 +54,8 @@ URxvt.clipboard.copycmd:  xclip -i -selection clipboard
 URxvt.clipboard.pastecmd: xclip -o selection clipboard
 URxvt.keysym.C-C: perl:clipboard:copy
 URxvt.keysym.C-V: perl:clipboard:paste
-URxvt.keysym.Control-v: perl:clipboard:paste
+URxvt.keysym.Shift-Control-V: perl:clipboard:paste
+URxvt.keysm.M-v: perl:clipboard:paste
 
 ! disable default bindings for control-shift
 URxvt.iso14755: false
