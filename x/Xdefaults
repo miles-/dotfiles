@@ -22,8 +22,8 @@ URxvt.saveLines:            999999
 URxvt*.cutchars:            "()*,;<>[]{}|`\"'#│"'`"
 
 ! Fonts
-URxvt*font: xft:Inconsolata Nerd Font Mono:pixelsize=30,style=Medium, xft:Symbola:pixelsize=19,style=Regular
-URxvt*boldFont: xft:Inconsolata Nerd Font Mono:pixelsize=30,style=Bold, xft:Symbola:pixelsize=19,style=Regular
+URxvt*font: xft:Iosevka:pixelsize=30,style=Medium, xft:Symbola:pixelsize=19,style=Regular
+URxvt*boldFont: xft:Iosevka:pixelsize=30,style=Bold, xft:Symbola:pixelsize=19,style=Regular
 
 ! Fix font space
 URxvt*letterSpace: 1
