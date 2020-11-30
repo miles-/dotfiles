@@ -1,3 +1,5 @@
+[[ -f ~/.Xmodmap ]] && xmodmap ~/.Xmodmap
+
 xrdb -merge ~/.Xresources
 
 autocutsel -fork &
