@@ -25,7 +25,8 @@ set incsearch                   " incremental searching
 set ignorecase                  " searches ignore case
 set smartcase                   " unless the search contains 1+ capital letter
 
-colorscheme Tomorrow-Night-Bright
+let g:dracula_colorterm = 0
+colorscheme dracula
 let g:rehash256 = 1
 " let g:molokai_original = 1
 "colorscheme molokai

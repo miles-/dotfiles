@@ -19,7 +19,7 @@ ${if_running spotify} {"full_text":": ${exec ~/.scripts/spotify-nowplaying.sh
 {"full_text": ": ${cpu}%", "color":"\#cf6a4c"},
 {"full_text": ": $mem","color":"\#cda869"},
 {"full_text": "${exec ~/.scripts/bat_icon.sh}", "color":"\#254AB8"},
-${if_up wlp58s0} { "full_text" : "(${wireless_essid wlp58s0}) ${addr wlp58s0}" , "color" : "\#00cc00" }, ${else}\
+${if_up wlp0s20f3} { "full_text" : "(${wireless_essid wlp0s20f3}) ${addr wlp0s20f3}" , "color" : "\#00cc00" }, ${else}\
     ${if_up ens3f1} { "full_text" : "Eth: ${addr ens3f1}" , "color" : "\#00cc00" }, ${else}\
        ${if_up enp0s20u1} { "full_text" : "USB: ${addr enp0s20u1}" , "color" :"\#00cc00" }, ${else}\
             { "full_text" : "No Network" , "color" : "\#ff0000" },\

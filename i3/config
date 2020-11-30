@@ -8,7 +8,7 @@ new_window 1pixel
 
 # i3 config file (v4)
 # # Please see http://i3wm.org/docs/userguide.html for a complete reference!
-set $mod Mod1
+set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -167,12 +167,24 @@ bindsym $mod+r mode "resize"
 bar {
         font pango:Inconsolata 11
         status_command ~/bin/conky-i3bar
+
+        colors {
+          background #282A36
+          statusline #F8F8F2
+          separator  #44475A
+
+          focused_workspace  #44475A #44475A #F8F8F2
+          active_workspace   #282A36 #44475A #F8F8F2
+          inactive_workspace #282A36 #282A36 #BFBFBF
+          urgent_workspace   #FF5555 #FF5555 #F8F8F2
+          binding_mode       #FF5555 #FF5555 #F8F8F2
+        }
 }
 
 bindsym --release Print exec import ~/screenshots/$(date +%F-%T).png
 
 # Wallpaper
-exec feh --bg-scale ~/photos/.wallpaper/bg.jpg
+exec feh --bg-scale ~/photos/bg.png
 
 # Multimedia Keys
 # increase volume
@@ -192,3 +204,11 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 5
 
 # lock screen
 bindsym $mod+o exec "i3lock -c 000000"
+
+# dracula theme
+# class                 border  bground text    indicator child_border
+client.focused          #6272A4 #6272A4 #F8F8F2 #6272A4   #6272A4
+client.focused_inactive #44475A #44475A #F8F8F2 #44475A   #44475A
+client.unfocused        #282A36 #282A36 #BFBFBF #282A36   #282A36
+client.urgent           #44475A #FF5555 #F8F8F2 #FF5555   #FF5555
+client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
