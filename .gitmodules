@@ -1,6 +1,3 @@
-[submodule "vim/bundle/badwolf"]
-	path = vim/bundle/badwolf
-	url = https://github.com/sjl/badwolf
 [submodule "vim/bundle/tabular"]
 	path = vim/bundle/tabular
 	url = https://github.com/godlygeek/tabular
@@ -31,9 +28,6 @@
 [submodule "vim/bundle/ag.vim"]
 	path = vim/bundle/ag.vim
 	url = git@github.com:rking/ag.vim.git
-[submodule "vim/bundle/ctrlp.vim"]
-	path = vim/bundle/ctrlp.vim
-	url = git@github.com:kien/ctrlp.vim.git
 [submodule "vim/bundle/splitjoin.vim"]
 	path = vim/bundle/splitjoin.vim
 	url = git@github.com:AndrewRadev/splitjoin.vim.git
@@ -49,9 +43,18 @@
 [submodule "vim/colors/bundle/dracula-theme"]
 	path = vim/colors/bundle/dracula-theme
 	url = git@github.com:dracula/vim.git
-[submodule "vim/colors/bundle/bundle/dracula"]
-	path = vim/colors/bundle/bundle/dracula
-	url = git@github.com:dracula/vim.git
 [submodule "vim/bundle/dracula"]
 	path = vim/bundle/dracula
 	url = git@github.com:dracula/vim.git
+[submodule "vim/bundle/fzf"]
+	path = vim/bundle/fzf
+	url = git@github.com:junegunn/fzf.git
+[submodule "vim/bundle/fzf.vim"]
+	path = vim/bundle/fzf.vim
+	url = git@github.com:junegunn/fzf.vim.git
+[submodule "vim/bundle/vim-terraform"]
+	path = vim/bundle/vim-terraform
+	url = git@github.com:hashivim/vim-terraform.git
+[submodule "vim/undle/fzf.vim"]
+	path = vim/undle/fzf.vim
+	url = git@github.com:junegunn/fzf.vim.git

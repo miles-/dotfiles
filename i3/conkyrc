@@ -13,12 +13,12 @@ conky.config = {
 
 conky.text = [[
 [
-{"full_text": "${execpi 3600 ~/.scripts/weather.sh 11231}", "color":"\#83ccd2"},
+{"full_text": "${execpi 3600 ~/bin/weather.sh 11231}", "color":"\#83ccd2"},
 {"full_text": ": ${execpi 3600 yay -Qu | wc -l}", "color":"\#00FFFF"},
-${if_running spotify} {"full_text":": ${exec ~/.scripts/spotify-nowplaying.sh }","color":"\#89b859"}, ${endif}\
+${if_running spotify} {"full_text":": ${exec ~/bin/spotify-nowplaying.sh }","color":"\#89b859"}, ${endif}\
 {"full_text": ": ${cpu}%", "color":"\#cf6a4c"},
 {"full_text": ": $mem","color":"\#cda869"},
-{"full_text": "${exec ~/.scripts/bat_icon.sh}", "color":"\#254AB8"},
+{"full_text": "${exec ~/bin/bat_icon.sh}", "color":"\#254AB8"},
 ${if_up wlp0s20f3} { "full_text" : "(${wireless_essid wlp0s20f3}) ${addr wlp0s20f3}" , "color" : "\#00cc00" }, ${else}\
     ${if_up ens3f1} { "full_text" : "Eth: ${addr ens3f1}" , "color" : "\#00cc00" }, ${else}\
        ${if_up enp0s20u1} { "full_text" : "USB: ${addr enp0s20u1}" , "color" :"\#00cc00" }, ${else}\
