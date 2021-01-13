@@ -1,8 +1,10 @@
+" pathogen
 execute pathogen#infect()
+
+" general settings
 syntax on                       " syntax highlighting
 filetype plugin indent on       " load file type plugins + indentation
 set nocompatible                " use vim settings over vi
-set background=dark
 set encoding=utf-8
 set showcmd                     " bottom line will show information about command
 set history=50                  " save 50 lines of history
@@ -23,6 +25,7 @@ set ignorecase                  " searches ignore case
 set smartcase                   " unless the search contains 1+ capital letter
 
 " dracula theme
+set background=dark
 let g:dracula_colorterm = 0
 colorscheme dracula
 let g:rehash256 = 1
@@ -95,3 +98,19 @@ let g:WMGraphviz_viewer="firefox"
 " vim-terraform
 let g:terraform_align=1
 let g:terraform_fmt_on_save=1
+
+" fzf
+nnoremap <C-P> :Files<CR>
+
+" delimitMate
+let delimitMate_expand_cr = 1
+
+" syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0

@@ -58,3 +58,18 @@
 [submodule "vim/undle/fzf.vim"]
 	path = vim/undle/fzf.vim
 	url = git@github.com:junegunn/fzf.vim.git
+[submodule "vim/bundle/delimtMate"]
+	path = vim/bundle/delimtMate
+	url = git@github.com:Raimondi/delimitMate.git
+[submodule "bundle/vim-better-whitespace"]
+	path = bundle/vim-better-whitespace
+	url = git@github.com:ntpeters/vim-better-whitespace.git
+[submodule "vim/bundle/vim-better-whitespace"]
+	path = vim/bundle/vim-better-whitespace
+	url = git@github.com:ntpeters/vim-better-whitespace.git
+[submodule "vim/bundle/syntastic"]
+	path = vim/bundle/syntastic
+	url = git@github.com:vim-syntastic/syntastic.git
+[submodule "bundle/syntastic"]
+	path = bundle/syntastic
+	url = git@github.com:vim-syntastic/syntastic.git
