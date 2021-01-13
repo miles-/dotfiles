@@ -6,6 +6,9 @@ bin:
 	mkdir -p ${HOME}/bin
 	# add aliases for things in bin
 	ln -fs $(CURDIR)/bin/conky-i3bar ${HOME}/bin/conky-i3bar
+	ln -fs $(CURDIR)/bin/bat_icon.sh ${HOME}/bin/bat_icon.sh
+	ln -fs $(CURDIR)/bin/spotify-nowplaying.sh ${HOME}/bin/spotify-nowplaying.sh
+	ln -fs $(CURDIR)/bin/weather.sh ${HOME}/bin/weather.sh
 
 i3:
 	mkdir -p ${HOME}/.config/i3
