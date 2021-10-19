@@ -10,6 +10,10 @@ bin:
 	ln -fs $(CURDIR)/bin/spotify-nowplaying.sh ${HOME}/bin/spotify-nowplaying.sh
 	ln -fs $(CURDIR)/bin/weather.sh ${HOME}/bin/weather.sh
 
+sway:
+	mkdir -p ${HOME}/.config/sway
+	ln -fs $(CURDIR)/sway/config ${HOME}/.config/sway/config
+
 i3:
 	mkdir -p ${HOME}/.config/i3
 	# add aliases for i3
