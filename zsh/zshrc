@@ -62,7 +62,8 @@ export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/site_perl:/usr/bin
 source $ZSH/oh-my-zsh.sh
 source <(helm completion zsh)
 source /opt/kube-ps1/kube-ps1.sh
-
+KUBE_PS1_SYMBOL_ENABLE=false
+KUBE_PS1_PREFIX="(k: "
 # You may need to manually set your language environment
 export LANG=en_US.UTF-8
 
@@ -110,6 +111,12 @@ alias staging="kubectl config use-context staging"
 alias production="kubectl config use-context production"
 alias shared="kubectl config use-context shared"
 alias clip="xclip -selection clipboard"
+alias tf="terraform"
+alias vim="nvim"
+
+alias docked="xrandr --output DP1 --auto --output eDP1 --off"
+alias undocked="xrandr --output eDP1 --auto --output DP1 --off"
+
 
 DEFAULT_USER=miles
 
@@ -122,13 +129,22 @@ function sunglasses() {
 #export QT_AUTO_SCREEN_SCALE_FACTOR=1
 #export QT_SCALE_FACTOR=1.75
 
+export BROWSER=firefox
+
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/usr/local/bin/google-cloud-sdk/path.zsh.inc' ]; then . '/usr/local/bin/google-cloud-sdk/path.zsh.inc'; fi
+if [ -f '/home/miles/google-cloud-sdk/path.zsh.inc' ]; then . '/home/miles/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/usr/local/bin/google-cloud-sdk/completion.zsh.inc' ]; then . '/usr/local/bin/google-cloud-sdk/completion.zsh.inc'; fi
+if [ -f '/home/miles/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/miles/google-cloud-sdk/completion.zsh.inc'; fi
 
-# aliases
-alias cat=bat
-alias ls=exa
-alias find=fd
+TIMEFMT=$'real\t%E\nuser\t%U\nsys\t%S'
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+eval "$(pyenv init -)"
+
+autoload -U compinit
+compinit -i
