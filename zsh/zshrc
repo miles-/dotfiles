@@ -150,6 +150,7 @@ autoload -U compinit
 compinit -i
 
 export MOZ_ENABLE_WAYLAND=1
+export MOZ_DBUS_REMOTE=1
 
 export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
