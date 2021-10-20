@@ -1,25 +1,28 @@
-.PHONY: all bin i3 dunst vim x zsh
+.PHONY: all alacritty bin dunst sway vim zsh
 
-all: bin i3 dunst vim x zsh
+all: alacritty bin dunst sway vim zsh
+
+alacritty:
+	mkdir -p ${HOME}/.config/alacritty
+	ln -fs $(CURDIR)/alacritty/alacritty.yml ${HOME}/.config/alacritty/alacritty.yml
 
 bin:
 	mkdir -p ${HOME}/bin
 	# add aliases for things in bin
-	ln -fs $(CURDIR)/bin/conky-i3bar ${HOME}/bin/conky-i3bar
+	ln -fs $(CURDIR)/bin/conky-swaybar ${HOME}/bin/conky-swaybar
 	ln -fs $(CURDIR)/bin/bat_icon.sh ${HOME}/bin/bat_icon.sh
 	ln -fs $(CURDIR)/bin/spotify-nowplaying.sh ${HOME}/bin/spotify-nowplaying.sh
 	ln -fs $(CURDIR)/bin/weather.sh ${HOME}/bin/weather.sh
-
-i3:
-	mkdir -p ${HOME}/.config/i3
-	# add aliases for i3
-	ln -fs $(CURDIR)/i3/conkyrc ${HOME}/.conkyrc
-	ln -fs $(CURDIR)/i3/config ${HOME}/.config/i3/config
 
 dunst:
 	mkdir -p ${HOME}/.config/dunst
 	# add alias for dunst
 	ln -fs $(CURDIR)/dunst/dunstrc ${HOME}/.config/dunst/dunstrc
+
+sway:
+	mkdir -p ${HOME}/.config/sway
+	ln -fs $(CURDIR)/sway/conkyrc ${HOME}/.conkyrc
+	ln -fs $(CURDIR)/sway/config ${HOME}/.config/sway/config
 
 vim:
 	mkdir -p ${HOME}/.vim
@@ -28,13 +31,6 @@ vim:
 	ln -sfn $(CURDIR)/vim/autoload/ ${HOME}/.vim/
 	ln -sfn $(CURDIR)/vim/bundle/ ${HOME}/.vim/
 	ln -sfn $(CURDIR)/vim/colors/ ${HOME}/.vim/
-
-x:
-	# add aliases for X
-	ln -fs $(CURDIR)/x/Xdefaults ${HOME}/.Xdefaults
-	ln -fs $(CURDIR)/x/xinitrc ${HOME}/.xinitrc
-	sudo ln -fs $(CURDIR)/x/30-touchpad.conf /etc/X11/xorg.conf.d/30-touchpad.conf
-	sudo ln -fs $(CURDIR)/x/xorg.conf /etc/X11/xorg.conf
 
 zsh:
 	# add aliases for zsh
