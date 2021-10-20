@@ -56,19 +56,19 @@ colors:
 # Font
 font:
   normal:
-    family: Inconsolata
+    family: monospace
     style: Regular
 
   bold:
-    family: Inconsolata
+    family: monospace
     style: Bold
 
   italic:
-    family: Inconsolata
+    family: monospace
     style: Italic
 
   bold_italic:
-    family: Inconsolata
+    family: monospace
     style: Bold Italic
 
   size: 22
