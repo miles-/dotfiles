@@ -110,13 +110,8 @@ alias sandbox="kubectl config use-context sandbox"
 alias staging="kubectl config use-context staging"
 alias production="kubectl config use-context production"
 alias shared="kubectl config use-context shared"
-alias clip="xclip -selection clipboard"
 alias tf="terraform"
 alias vim="nvim"
-
-alias docked="xrandr --output DP1 --auto --output eDP1 --off"
-alias undocked="xrandr --output eDP1 --auto --output DP1 --off"
-
 
 DEFAULT_USER=miles
 
@@ -155,3 +150,5 @@ export MOZ_DBUS_REMOTE=1
 export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
 export XMODIFIERS=@im=fcitx
+
+export XDG_SCREENSHOTS_DIR=~/screenshots
