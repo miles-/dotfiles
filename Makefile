@@ -19,6 +19,10 @@ dunst:
 	# add alias for dunst
 	ln -fs $(CURDIR)/dunst/dunstrc ${HOME}/.config/dunst/dunstrc
 
+font:
+	mkdir -p ${HOME}/.config/fontconfig
+	ln -fs $(CURDIR)/font/fonts.conf ${HOME}/.config/fontconfig/fonts.conf
+
 sway:
 	mkdir -p ${HOME}/.config/sway
 	ln -fs $(CURDIR)/sway/conkyrc ${HOME}/.conkyrc
