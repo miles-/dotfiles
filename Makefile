@@ -1,6 +1,6 @@
-.PHONY: all alacritty bin dunst sway vim zsh
+.PHONY: all alacritty bin dunst font sway vim zsh
 
-all: alacritty bin dunst sway vim zsh
+all: alacritty bin dunst font sway vim zsh
 
 alacritty:
 	mkdir -p ${HOME}/.config/alacritty
