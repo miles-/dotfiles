@@ -132,3 +132,9 @@ let $FZF_DEFAULT_COMMAND = "find -L"
 
 " delimitMate
 let delimitMate_expand_cr = 1
+
+" terraform LSP
+lua <<EOF
+  require'lspconfig'.terraformls.setup{}
+EOF
+autocmd BufWritePre *.tf lua vim.lsp.buf.formatting_sync()
