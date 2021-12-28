@@ -1,6 +1,6 @@
-.PHONY: all alacritty bin dunst font sway vim zsh
+.PHONY: all alacritty bin dunst font sway nvim vim zsh
 
-all: alacritty bin dunst font sway vim zsh
+all: alacritty bin dunst font nvim sway vim zsh
 
 alacritty:
 	mkdir -p ${HOME}/.config/alacritty
@@ -22,6 +22,10 @@ dunst:
 font:
 	mkdir -p ${HOME}/.config/fontconfig
 	ln -fs $(CURDIR)/font/fonts.conf ${HOME}/.config/fontconfig/fonts.conf
+
+nvim:
+	mkdir -p ${HOME}/.config/nvim
+	ln -fs $(CURDIR)/nvim/init.vim ${HOME}/.config/nvim/init.vim
 
 sway:
 	mkdir -p ${HOME}/.config/sway
