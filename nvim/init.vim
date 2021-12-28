@@ -133,6 +133,9 @@ let $FZF_DEFAULT_COMMAND = "find -L"
 " delimitMate
 let delimitMate_expand_cr = 1
 
+" neomake
+call neomake#configure#automake('nrwi', 500)
+
 " terraform LSP
 lua <<EOF
   require'lspconfig'.terraformls.setup{}
