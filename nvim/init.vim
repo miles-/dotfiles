@@ -1,5 +1,44 @@
-" pathogen
-execute pathogen#infect()
+" plugins
+" Install vim-plug if not found
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+endif
+
+" Run PlugInstall if there are missing plugins
+autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
+  \| PlugInstall --sync | source $MYVIMRC
+\| endif
+
+call plug#begin('~/.config/nvim/plugged')
+" LSP:
+Plug 'neovim/nvim-lspconfig'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-cmdline'
+Plug 'hrsh7th/nvim-cmp'
+" For vsnip users:
+Plug 'hrsh7th/cmp-vsnip'
+Plug 'hrsh7th/vim-vsnip'
+"File Search:
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+"File Browser:
+Plug 'scrooloose/nerdtree'
+Plug 'ryanoasis/vim-devicons'
+Plug 'vim-airline/vim-airline'
+"Color:
+Plug 'dracula/vim'
+"Golang:
+Plug 'fatih/vim-go'
+"Python:
+Plug 'neomake/neomake'
+"Terraform:
+Plug 'hashivim/vim-terraform'
+"Git:
+Plug 'tpope/vim-fugitive'
+call plug#end()
 
 " general settings
 set number                      " show line numbers
@@ -88,16 +127,17 @@ let g:terraform_fmt_on_save=1
 
 " fzf
 nnoremap <C-P> :Files<CR>
+" allow FZF to search hidden 'dot' files
+let $FZF_DEFAULT_COMMAND = "find -L"
 
 " delimitMate
 let delimitMate_expand_cr = 1
 
-" syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+" neomake
+call neomake#configure#automake('nrwi', 500)
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+" terraform LSP
+lua <<EOF
+  require'lspconfig'.terraformls.setup{}
+EOF
+autocmd BufWritePre *.tf lua vim.lsp.buf.formatting_sync()
