@@ -11,6 +11,33 @@ autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
 \| endif
 
 call plug#begin('~/.config/nvim/plugged')
+" LSP:
+Plug 'neovim/nvim-lspconfig'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-cmdline'
+Plug 'hrsh7th/nvim-cmp'
+" For vsnip users:
+Plug 'hrsh7th/cmp-vsnip'
+Plug 'hrsh7th/vim-vsnip'
+"File Search:
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+"File Browser:
+Plug 'scrooloose/nerdtree'
+Plug 'ryanoasis/vim-devicons'
+Plug 'vim-airline/vim-airline'
+"Color:
+Plug 'dracula/vim'
+"Golang:
+Plug 'fatih/vim-go'
+"Python:
+Plug 'neomake/neomake'
+"Terraform:
+Plug 'hashivim/vim-terraform'
+"Git:
+Plug 'tpope/vim-fugitive'
 call plug#end()
 
 " general settings
