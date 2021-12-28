@@ -127,6 +127,8 @@ let g:terraform_fmt_on_save=1
 
 " fzf
 nnoremap <C-P> :Files<CR>
+" allow FZF to search hidden 'dot' files
+let $FZF_DEFAULT_COMMAND = "find -L"
 
 " delimitMate
 let delimitMate_expand_cr = 1
