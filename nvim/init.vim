@@ -1,67 +1,10 @@
-" plugins
-" Install vim-plug if not found
-if empty(glob('~/.vim/autoload/plug.vim'))
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-endif
-
-" Run PlugInstall if there are missing plugins
-autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
-  \| PlugInstall --sync | source $MYVIMRC
-\| endif
-
-call plug#begin('~/.config/nvim/plugged')
-" LSP:
-Plug 'neovim/nvim-lspconfig'
-Plug 'hrsh7th/cmp-nvim-lsp'
-Plug 'hrsh7th/cmp-buffer'
-Plug 'hrsh7th/cmp-path'
-Plug 'hrsh7th/cmp-cmdline'
-Plug 'hrsh7th/nvim-cmp'
-" For vsnip users:
-Plug 'hrsh7th/cmp-vsnip'
-Plug 'hrsh7th/vim-vsnip'
-"File Search:
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
-"File Browser:
-Plug 'scrooloose/nerdtree'
-Plug 'ryanoasis/vim-devicons'
-Plug 'vim-airline/vim-airline'
-"Color:
-Plug 'dracula/vim'
-"Golang:
-Plug 'fatih/vim-go'
-"Python:
-Plug 'neomake/neomake'
-"Terraform:
-Plug 'hashivim/vim-terraform'
-"Git:
-Plug 'tpope/vim-fugitive'
-call plug#end()
-
 " general settings
-set number                      " show line numbers
-set cursorline                  " highlight current line
 set modeline
-set autowrite
-set nowrap                      " do not wrap lines
 set tabstop=2 shiftwidth=2      " tab is two spaces
 set expandtab                   " tabs are spaces
 set backspace=2
-set ignorecase                  " searches ignore case
-set smartcase                   " unless the search contains 1+ capital letter
-
-" dracula theme
-set background=dark
-let g:dracula_colorterm = 0
-colorscheme dracula
-let g:rehash256 = 1
 
 :tab sball
-
-let mapleader = ","
-let maplocalleader = ",,"
 
 " nerdtree
 nnoremap <Leader>f :NERDTreeToggle<Enter>
@@ -121,23 +64,10 @@ let g:vim_markdown_folding_disabled = 1
 let g:WMGraphviz_output="png"
 let g:WMGraphviz_viewer="firefox"
 
-" vim-terraform
-let g:terraform_align=1
-let g:terraform_fmt_on_save=1
-
 " fzf
 nnoremap <C-P> :Files<CR>
-" allow FZF to search hidden 'dot' files
-let $FZF_DEFAULT_COMMAND = "find -L"
-
-" delimitMate
-let delimitMate_expand_cr = 1
 
 " neomake
 call neomake#configure#automake('nrwi', 500)
 
-" terraform LSP
-lua <<EOF
-  require'lspconfig'.terraformls.setup{}
-EOF
 autocmd BufWritePre *.tf lua vim.lsp.buf.formatting_sync()
