@@ -25,7 +25,11 @@ font:
 
 nvim:
 	mkdir -p ${HOME}/.config/nvim
-	ln -fs $(CURDIR)/nvim/init.vim ${HOME}/.config/nvim/init.vim
+	mkdir -p ${HOME}/.config/nvim/lua
+	ln -fs $(CURDIR)/nvim/init.lua ${HOME}/.config/nvim/init.lua
+	ln -fs $(CURDIR)/nvim/plugins.lua ${HOME}/.config/nvim/lua/plugins.lua
+	ln -fs $(CURDIR)/nvim/config.lua ${HOME}/.config/nvim/lua/config.lua
+	ln -fs $(CURDIR)/nvim/lsp.lua ${HOME}/.config/nvim/lua/lsp.lua
 
 sway:
 	mkdir -p ${HOME}/.config/sway
