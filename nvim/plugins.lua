@@ -33,7 +33,7 @@ require('packer').startup(function()
   -- UI
   use 'itchyny/lightline.vim' -- Fancier statusline
   use 'lukas-reineke/indent-blankline.nvim' -- Add indentation guides even on blank lines
-  use 'ryanoasis/vim-devicons' -- file type icons
+  use 'kyazdani42/nvim-web-devicons' -- file type icons
   -- use 'scrooloose/nerdtree'
   use 'nvim-treesitter/nvim-treesitter' -- Highlight, edit, and navigate code using a fast incremental parsing library
   -- Additional textobjects for treesitter
