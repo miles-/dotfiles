@@ -1,75 +1,21 @@
-[submodule "vim/bundle/tabular"]
-	path = vim/bundle/tabular
-	url = https://github.com/godlygeek/tabular
-[submodule "vim/bundle/vim-go"]
-	path = vim/bundle/vim-go
-	url = https://github.com/fatih/vim-go
-[submodule "vim/bundle/vim-ruby"]
-	path = vim/bundle/vim-ruby
-	url = https://github.com/vim-ruby/vim-ruby
 [submodule "oh-my-zsh"]
 	path = oh-my-zsh
 	url = https://github.com/robbyrussell/oh-my-zsh
-[submodule "vim/bundle/vim-airline"]
-	path = vim/bundle/vim-airline
-	url = https://github.com/vim-airline/vim-airline
-[submodule "vim/bundle/nerdtree-git-plugin"]
-	path = vim/bundle/nerdtree-git-plugin
-	url = git@github.com:Xuyuanp/nerdtree-git-plugin.git
-[submodule "vim/bundle/nerdtree"]
-	path = vim/bundle/nerdtree
-	url = git@github.com:scrooloose/nerdtree.git
 [submodule "vim/bundle/vim-colors-solarized"]
 	path = vim/bundle/vim-colors-solarized
 	url = git@github.com:altercation/vim-colors-solarized.git
-[submodule "vim/bundle/ack.vim"]
-	path = vim/bundle/ack.vim
-	url = git@github.com:mileszs/ack.vim.git
-[submodule "vim/bundle/ag.vim"]
-	path = vim/bundle/ag.vim
-	url = git@github.com:rking/ag.vim.git
-[submodule "vim/bundle/splitjoin.vim"]
-	path = vim/bundle/splitjoin.vim
-	url = git@github.com:AndrewRadev/splitjoin.vim.git
-[submodule "vim/bundle/ultisnips"]
-	path = vim/bundle/ultisnips
-	url = git@github.com:SirVer/ultisnips.git
 [submodule "vim/bundle/vim-fugitive"]
 	path = vim/bundle/vim-fugitive
 	url = git@github.com:tpope/vim-fugitive.git
-[submodule "vim/bundle/wmgraphviz.vim"]
-	path = vim/bundle/wmgraphviz.vim
-	url = git@github.com:wannesm/wmgraphviz.vim.git
 [submodule "vim/colors/bundle/dracula-theme"]
 	path = vim/colors/bundle/dracula-theme
 	url = git@github.com:dracula/vim.git
-[submodule "vim/bundle/dracula"]
-	path = vim/bundle/dracula
-	url = git@github.com:dracula/vim.git
-[submodule "vim/bundle/fzf"]
-	path = vim/bundle/fzf
-	url = git@github.com:junegunn/fzf.git
-[submodule "vim/bundle/fzf.vim"]
-	path = vim/bundle/fzf.vim
-	url = git@github.com:junegunn/fzf.vim.git
-[submodule "vim/bundle/vim-terraform"]
-	path = vim/bundle/vim-terraform
-	url = git@github.com:hashivim/vim-terraform.git
 [submodule "vim/undle/fzf.vim"]
 	path = vim/undle/fzf.vim
 	url = git@github.com:junegunn/fzf.vim.git
-[submodule "vim/bundle/delimtMate"]
-	path = vim/bundle/delimtMate
-	url = git@github.com:Raimondi/delimitMate.git
 [submodule "bundle/vim-better-whitespace"]
 	path = bundle/vim-better-whitespace
 	url = git@github.com:ntpeters/vim-better-whitespace.git
-[submodule "vim/bundle/vim-better-whitespace"]
-	path = vim/bundle/vim-better-whitespace
-	url = git@github.com:ntpeters/vim-better-whitespace.git
-[submodule "vim/bundle/syntastic"]
-	path = vim/bundle/syntastic
-	url = git@github.com:vim-syntastic/syntastic.git
 [submodule "bundle/syntastic"]
 	path = bundle/syntastic
 	url = git@github.com:vim-syntastic/syntastic.git
