@@ -1,6 +1,6 @@
-.PHONY: all alacritty bin dunst font sway nvim vim zsh
+.PHONY: all alacritty bin dunst font sway nvim zsh
 
-all: alacritty bin dunst font nvim sway vim zsh
+all: alacritty bin dunst font nvim sway zsh
 
 alacritty:
 	mkdir -p ${HOME}/.config/alacritty
@@ -35,14 +35,6 @@ sway:
 	mkdir -p ${HOME}/.config/sway
 	ln -fs $(CURDIR)/sway/conkyrc ${HOME}/.conkyrc
 	ln -fs $(CURDIR)/sway/config ${HOME}/.config/sway/config
-
-vim:
-	mkdir -p ${HOME}/.vim
-	# add aliases for vim
-	ln -fs $(CURDIR)/vim/vimrc ${HOME}/.vimrc
-	ln -sfn $(CURDIR)/vim/autoload/ ${HOME}/.vim/
-	ln -sfn $(CURDIR)/vim/bundle/ ${HOME}/.vim/
-	ln -sfn $(CURDIR)/vim/colors/ ${HOME}/.vim/
 
 zsh:
 	# add aliases for zsh
