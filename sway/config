@@ -226,6 +226,9 @@ bindsym $mod+r mode "resize"
     # Screenshot
     bindsym --release Print exec /usr/share/sway/scripts/grimshot --notify save area
 
+    # Record sound
+    bindsym --release Shift+Print exec /home/miles/bin/record_sound.sh
+
 #
 # Status Bar:
 #

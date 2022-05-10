@@ -13,6 +13,7 @@ bin:
 	ln -fs $(CURDIR)/bin/bat_icon.sh ${HOME}/bin/bat_icon.sh
 	ln -fs $(CURDIR)/bin/spotify-nowplaying.sh ${HOME}/bin/spotify-nowplaying.sh
 	ln -fs $(CURDIR)/bin/weather.sh ${HOME}/bin/weather.sh
+	ln -fs $(CURDIR)/bin/record_sound.sh ${HOME}/bin/record_sound.sh
 
 dunst:
 	mkdir -p ${HOME}/.config/dunst
