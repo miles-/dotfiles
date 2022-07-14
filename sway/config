@@ -271,7 +271,7 @@ client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
 # Startup software
 #
 exec nm-applet --indicator
-exec_always dunst
+exec_always mako
 exec_always fcitx5 -d --replace
 
 #
