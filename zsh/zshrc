@@ -57,7 +57,6 @@ plugins=(git battery kubectl alias-tips zsh-autosuggestions fzf)
 export GOPATH=~/go
 
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:$GOPATH/bin:/home/miles/bin"
-# export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
 source <(helm completion zsh)
@@ -131,6 +130,8 @@ if [ -f '/home/miles/google-cloud-sdk/path.zsh.inc' ]; then . '/home/miles/googl
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/miles/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/miles/google-cloud-sdk/completion.zsh.inc'; fi
+
+export USE_GKE_GCLOUD_AUTH_PLUGIN=True
 
 TIMEFMT=$'real\t%E\nuser\t%U\nsys\t%S'
 
