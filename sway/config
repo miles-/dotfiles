@@ -207,9 +207,9 @@ bindsym $mod+r mode "resize"
 # Other keybindings
 #
     # Multimedia keys
-    bindsym XF86AudioRaiseVolume exec amixer -q set Master 5%+ unmute
-    bindsym XF86AudioLowerVolume exec amixer -q set Master 5%- unmute
-    bindsym XF86AudioMute exec amixer -q set Master toggle
+    bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+    bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+    bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 
     # pause / play / next / previous
     bindsym XF86AudioPlay exec playerctl play-pause
@@ -271,8 +271,14 @@ client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
 # Startup software
 #
 exec nm-applet --indicator
-exec_always dunst
+exec_always mako
 exec_always fcitx5 -d --replace
+
+#
+# Make certain applications floating
+#
+for_window [app_id="zoom"] floating enable
+for_window [class="1Password"] floating enable
 
 include /etc/sway/config.d/*
 
