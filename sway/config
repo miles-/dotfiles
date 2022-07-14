@@ -274,6 +274,12 @@ exec nm-applet --indicator
 exec_always dunst
 exec_always fcitx5 -d --replace
 
+#
+# Make certain applications floating
+#
+for_window [app_id="zoom"] floating enable
+for_window [class="1Password"] floating enable
+
 include /etc/sway/config.d/*
 
 exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
