@@ -1,6 +1,6 @@
-.PHONY: all alacritty bin dunst font sway nvim zsh
+.PHONY: all alacritty bin mako font sway nvim zsh
 
-all: alacritty bin dunst font nvim sway zsh
+all: alacritty bin mako font nvim sway zsh
 
 alacritty:
 	mkdir -p ${HOME}/.config/alacritty
@@ -15,10 +15,10 @@ bin:
 	ln -fs $(CURDIR)/bin/weather.sh ${HOME}/bin/weather.sh
 	ln -fs $(CURDIR)/bin/record_sound.sh ${HOME}/bin/record_sound.sh
 
-dunst:
-	mkdir -p ${HOME}/.config/dunst
-	# add alias for dunst
-	ln -fs $(CURDIR)/dunst/dunstrc ${HOME}/.config/dunst/dunstrc
+mako:
+	mkdir -p ${HOME}/.config/mako
+	# add alias for mako
+	ln -fs $(CURDIR)/mako/config ${HOME}/.config/mako/config
 
 font:
 	mkdir -p ${HOME}/.config/fontconfig
