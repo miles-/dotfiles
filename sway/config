@@ -79,6 +79,8 @@ input "type:keyboard" {
     for_window [app_id="^launcher$"] floating enable, border none, resize set width 25 ppt height 20 ppt, move position 0 px 0 px
 
 
+    for_window [app_id="anki"] border normal
+
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
     # Despite the name, also works for non-floating windows.
