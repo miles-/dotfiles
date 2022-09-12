@@ -1,5 +1,6 @@
 -- general settings
 vim.wo.number = true -- make line numbers default
+vim.wo.relativenumber = true -- relativen line numbers
 vim.wo.cursorline = true -- highlight current line
 vim.o.hlsearch = true -- set highlight on search
 vim.o.ignorecase = true -- case insensitive searching unless /c or capital in search
