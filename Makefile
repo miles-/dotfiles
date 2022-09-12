@@ -1,6 +1,6 @@
-.PHONY: all alacritty bin mako font sway nvim zsh
+.PHONY: all alacritty bin mako font sway nvim tmux zsh
 
-all: alacritty bin mako font nvim sway zsh
+all: alacritty bin mako font nvim sway tmux zsh
 
 alacritty:
 	mkdir -p ${HOME}/.config/alacritty
@@ -36,6 +36,9 @@ sway:
 	mkdir -p ${HOME}/.config/sway
 	ln -fs $(CURDIR)/sway/conkyrc ${HOME}/.conkyrc
 	ln -fs $(CURDIR)/sway/config ${HOME}/.config/sway/config
+
+tmux:
+	ln -fs $(CURDIR)/tmux/tmux.conf ${HOME}/.tmux.conf
 
 zsh:
 	# add aliases for zsh
