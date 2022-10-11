@@ -4,7 +4,9 @@ all: alacritty bin mako font nvim sway tmux zsh
 
 alacritty:
 	mkdir -p ${HOME}/.config/alacritty
+	mkdir -p ${HOME}/.config/alacritty/catppuccin
 	ln -fs $(CURDIR)/alacritty/alacritty.yml ${HOME}/.config/alacritty/alacritty.yml
+	ln -fs $(CURDIR)/alacritty/catppuccin/catppuccin-mocha.yml ${HOME}/.config/alacritty/catppuccin/catppuccin-mocha.yml
 
 bin:
 	mkdir -p ${HOME}/bin
