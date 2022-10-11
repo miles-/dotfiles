@@ -30,6 +30,15 @@ require('packer').startup(function()
 	use 'tpope/vim-sleuth'
   -- Color
   use 'dracula/vim'
+  use {
+	"catppuccin/nvim",
+	as = "catppuccin",
+	config = function()
+		vim.g.catppuccin_flavour = "mocha" -- latte, frappe, macchiato, mocha
+		require("catppuccin").setup()
+		vim.api.nvim_command "colorscheme catppuccin"
+	end
+}
   -- UI
   use 'itchyny/lightline.vim' -- Fancier statusline
   use 'lukas-reineke/indent-blankline.nvim' -- Add indentation guides even on blank lines

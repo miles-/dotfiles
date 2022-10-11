@@ -13,15 +13,9 @@ vim.wo.signcolumn = 'yes'
 --vim.opt.tabstop = 2
 --vim.opt.shiftwidth = 2
 
--- dracula theme
-vim.o.termguicolors = true
-vim.g.draculacolorterm = 0
-vim.cmd 'colorscheme dracula'
-vim.g.rehash256 = 1
-
 -- set statusbar
 vim.g.lightline = {
-  colorscheme = 'dracula',
+  colorscheme = 'catppuccin',
   active = { left = { { 'mode', 'paste' }, { 'gitbranch', 'readonly', 'filename', 'modified' } } },
   component_function = { gitbranch = 'fugitive#head' },
 }
@@ -136,3 +130,22 @@ vim.g.go_fmt_command = 'goimports'
 -- terraform
 vim.g.terraform_align = 1
 vim.g.terraform_fmt_on_save = 1
+
+require("catppuccin").setup({
+	term_colors = true,
+	dim_inactive = {
+		enabled = false,
+	},
+	integrations = {
+		cmp = true,
+		gitsigns = true,
+		telescope = true,
+		treesitter = true,
+		indent_blankline = {
+		  enabled = true,
+		},
+		native_lsp = {
+		  enabled = true,
+		},
+	},
+})
