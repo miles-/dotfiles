@@ -9,7 +9,6 @@ alacritty:
 bin:
 	mkdir -p ${HOME}/bin
 	# add aliases for things in bin
-	ln -fs $(CURDIR)/bin/conky-swaybar ${HOME}/bin/conky-swaybar
 	ln -fs $(CURDIR)/bin/bat_icon.sh ${HOME}/bin/bat_icon.sh
 	ln -fs $(CURDIR)/bin/spotify-nowplaying.sh ${HOME}/bin/spotify-nowplaying.sh
 	ln -fs $(CURDIR)/bin/weather.sh ${HOME}/bin/weather.sh
@@ -34,8 +33,11 @@ nvim:
 
 sway:
 	mkdir -p ${HOME}/.config/sway
-	ln -fs $(CURDIR)/sway/conkyrc ${HOME}/.conkyrc
 	ln -fs $(CURDIR)/sway/config ${HOME}/.config/sway/config
+	mkdir -p ${HOME}/.config/waybar
+	ln -fs $(CURDIR)/sway/waybar/config ${HOME}/.config/waybar/config
+	ln -fs $(CURDIR)/sway/waybar/mocha.css ${HOME}/.config/waybar/mocha.css
+	ln -fs $(CURDIR)/sway/waybar/style.css ${HOME}/.config/waybar/style.css
 
 tmux:
 	ln -fs $(CURDIR)/tmux/tmux.conf ${HOME}/.tmux.conf
