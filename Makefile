@@ -1,6 +1,6 @@
-.PHONY: all alacritty bin mako font sway nvim tmux zsh
+.PHONY: all alacritty bin mako font spotify sway nvim tmux zsh
 
-all: alacritty bin mako font nvim sway tmux zsh
+all: alacritty bin mako font nvim spotify sway tmux zsh
 
 alacritty:
 	mkdir -p ${HOME}/.config/alacritty
@@ -32,6 +32,9 @@ nvim:
 	ln -fs $(CURDIR)/nvim/plugins.lua ${HOME}/.config/nvim/lua/plugins.lua
 	ln -fs $(CURDIR)/nvim/config.lua ${HOME}/.config/nvim/lua/config.lua
 	ln -fs $(CURDIR)/nvim/lsp.lua ${HOME}/.config/nvim/lua/lsp.lua
+
+spotify:
+	ln -fs $(CURDIR)/spotify/config.yml ${HOME}/.config/spotify-tui/config.yml
 
 sway:
 	mkdir -p ${HOME}/.config/sway
