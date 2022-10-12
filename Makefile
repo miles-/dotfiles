@@ -1,15 +1,16 @@
-.PHONY: all alacritty bin mako font sway nvim tmux zsh
+.PHONY: all alacritty bin mako font spotify sway nvim tmux zsh
 
-all: alacritty bin mako font nvim sway tmux zsh
+all: alacritty bin mako font nvim spotify sway tmux zsh
 
 alacritty:
 	mkdir -p ${HOME}/.config/alacritty
+	mkdir -p ${HOME}/.config/alacritty/catppuccin
 	ln -fs $(CURDIR)/alacritty/alacritty.yml ${HOME}/.config/alacritty/alacritty.yml
+	ln -fs $(CURDIR)/alacritty/catppuccin/catppuccin-mocha.yml ${HOME}/.config/alacritty/catppuccin/catppuccin-mocha.yml
 
 bin:
 	mkdir -p ${HOME}/bin
 	# add aliases for things in bin
-	ln -fs $(CURDIR)/bin/conky-swaybar ${HOME}/bin/conky-swaybar
 	ln -fs $(CURDIR)/bin/bat_icon.sh ${HOME}/bin/bat_icon.sh
 	ln -fs $(CURDIR)/bin/spotify-nowplaying.sh ${HOME}/bin/spotify-nowplaying.sh
 	ln -fs $(CURDIR)/bin/weather.sh ${HOME}/bin/weather.sh
@@ -32,10 +33,16 @@ nvim:
 	ln -fs $(CURDIR)/nvim/config.lua ${HOME}/.config/nvim/lua/config.lua
 	ln -fs $(CURDIR)/nvim/lsp.lua ${HOME}/.config/nvim/lua/lsp.lua
 
+spotify:
+	ln -fs $(CURDIR)/spotify/config.yml ${HOME}/.config/spotify-tui/config.yml
+
 sway:
 	mkdir -p ${HOME}/.config/sway
-	ln -fs $(CURDIR)/sway/conkyrc ${HOME}/.conkyrc
 	ln -fs $(CURDIR)/sway/config ${HOME}/.config/sway/config
+	mkdir -p ${HOME}/.config/waybar
+	ln -fs $(CURDIR)/sway/waybar/config ${HOME}/.config/waybar/config
+	ln -fs $(CURDIR)/sway/waybar/mocha.css ${HOME}/.config/waybar/mocha.css
+	ln -fs $(CURDIR)/sway/waybar/style.css ${HOME}/.config/waybar/style.css
 
 tmux:
 	ln -fs $(CURDIR)/tmux/tmux.conf ${HOME}/.tmux.conf
