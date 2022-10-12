@@ -10,15 +10,15 @@
         "max-length": 50
     },
     "idle_inhibitor": {
-        "format": "{icon} | ",
+        "format": "{icon}",
         "format-icons": {
             "activated": "",
             "deactivated": ""
         }
     },
     "pulseaudio": {
-        "format": "{volume}% {icon} {format_source} | ",
-        "format-bluetooth": "{volume}% {icon} {format_source} | ",
+        "format": "{volume}%",
+        "format-bluetooth": "{volume}% {icon} {format_source}",
         "format-bluetooth-muted": " {icon} {format_source}",
         "format-muted": " {format_source}",
         "format-source": "{volume}% ",
@@ -34,21 +34,21 @@
         "on-click": "pavucontrol"
     },
     "network": {
-        "format-wifi": "{essid} ({signalStrength}%)  | ",
-        "format-ethernet": "{ipaddr}/{cidr} | ",
-        "tooltip-format": "{ifname} via {gwaddr} | ",
-        "format-linked": "{ifname} (No IP) | ",
-        "format-disconnected": "Disconnected ⚠ | ",
-        "format-alt": "{ifname}: {ipaddr}/{cidr} | "
+        "format-wifi": "{essid} ({signalStrength}%) ",
+        "format-ethernet": "{ipaddr}/{cidr}",
+        "tooltip-format": "{ifname} via {gwaddr}",
+        "format-linked": "{ifname} (No IP)",
+        "format-disconnected": "Disconnected ⚠",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}"
     },
     "cpu": {
-        "format": "{usage}%  | ",
+        "format": "{usage}% ",
     },
     "memory": {
-        "format": "{}%  | ",
+        "format": "{}% ",
     },
     "backlight": {
-        "format": "{percent}% {icon} | ",
+        "format": "{percent}% {icon}",
         "format-icons": ["", "", "", "", "", "", "", "", ""]
     },
     "battery": {
@@ -57,16 +57,16 @@
             "warning": 30,
             "critical": 15
         },
-        "format": "{capacity}% {icon} | ",
-        "format-charging": "{capacity}%  | ",
-        "format-plugged": "{capacity}%  | ",
-        "format-alt": "{time} {icon} | ",
+        "format": "{capacity}% {icon}",
+        "format-charging": "{capacity}% ",
+        "format-plugged": "{capacity}% ",
+        "format-alt": "{time} {icon}",
         "format-icons": ["", "", "", "", ""]
     },
     "clock": {
-	"format": "{:%a %Y-%m-%d %H:%M}",
+	"format": "{:%H:%M}",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "{:%Y-%m-%d}"
+        "format-alt": "{:%a %Y-%m-%d}"
     },
     "tray": {
         "icon-size": 27,
