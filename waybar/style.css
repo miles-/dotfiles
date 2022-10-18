@@ -1,0 +1,44 @@
+@import "mocha.css";
+
+* {
+    border: none;
+    border-radius: 0;
+    font-family: monospace;
+    font-size: 26px;
+    min-height: 0;
+}
+
+window#waybar {
+    background-color: @base;
+    color: @text;
+}
+
+tooltip {
+    background-color: @base;
+    border: 1px solid;
+}
+
+tooltip label {
+  color: @subtext;
+}
+
+#workspaces button.focused {
+    background: @overlay0;
+    border-bottom: 3px solid @white;
+}
+
+#idle_inhibitor,
+#pulseaudio,
+#cpu,
+#memory,
+#backlight,
+#battery,
+#network,
+#clock,
+#tray {
+    padding: 0 10px;
+    margin: 3px 1px;
+    border-radius: 2;
+    color: @text;
+    background-color: @surface2;
+}

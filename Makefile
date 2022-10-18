@@ -1,6 +1,6 @@
-.PHONY: all alacritty bin mako font spotify sway nvim tmux zsh
+.PHONY: all alacritty bin font mako nvim spotify sway tmux waybar zsh
 
-all: alacritty bin mako font nvim spotify sway tmux zsh
+all: alacritty bin font mako nvim spotify sway tmux waybar zsh
 
 alacritty:
 	mkdir -p ${HOME}/.config/alacritty
@@ -39,13 +39,15 @@ spotify:
 sway:
 	mkdir -p ${HOME}/.config/sway
 	ln -fs $(CURDIR)/sway/config ${HOME}/.config/sway/config
+
+tmux:
+	ln -fs $(CURDIR)/tmux/tmux.conf ${HOME}/.tmux.conf
+
+waybar:
 	mkdir -p ${HOME}/.config/waybar
 	ln -fs $(CURDIR)/sway/waybar/config ${HOME}/.config/waybar/config
 	ln -fs $(CURDIR)/sway/waybar/mocha.css ${HOME}/.config/waybar/mocha.css
 	ln -fs $(CURDIR)/sway/waybar/style.css ${HOME}/.config/waybar/style.css
-
-tmux:
-	ln -fs $(CURDIR)/tmux/tmux.conf ${HOME}/.tmux.conf
 
 zsh:
 	# add aliases for zsh
