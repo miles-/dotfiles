@@ -45,9 +45,9 @@ tmux:
 
 waybar:
 	mkdir -p ${HOME}/.config/waybar
-	ln -fs $(CURDIR)/sway/waybar/config ${HOME}/.config/waybar/config
-	ln -fs $(CURDIR)/sway/waybar/mocha.css ${HOME}/.config/waybar/mocha.css
-	ln -fs $(CURDIR)/sway/waybar/style.css ${HOME}/.config/waybar/style.css
+	ln -fs $(CURDIR)/waybar/config ${HOME}/.config/waybar/config
+	ln -fs $(CURDIR)/waybar/mocha.css ${HOME}/.config/waybar/mocha.css
+	ln -fs $(CURDIR)/waybar/style.css ${HOME}/.config/waybar/style.css
 
 zsh:
 	# add aliases for zsh
