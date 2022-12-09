@@ -4,25 +4,13 @@
     "spacing": 4, // Gaps between modules (8px)
     "modules-left": ["sway/workspaces"],
     "modules-center": [],
-    "modules-right": ["custom/updates", "custom/weather", "custom/spotify", "idle_inhibitor", "pulseaudio", "cpu", "memory", "backlight", "battery", "network", "clock", "tray"],
+    "modules-right": ["custom/weather", "pulseaudio", "cpu", "memory", "backlight", "battery", "network", "clock#date", "clock#time", "tray"],
     // Modules configuration
     "sway/window": {
         "max-length": 50
     },
-    "idle_inhibitor": {
-        "format": "{icon}",
-        "format-icons": {
-            "activated": "",
-            "deactivated": ""
-        }
-    },
     "pulseaudio": {
-        "format": "{volume}%",
-        "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": " {format_source}",
-        "format-source": "{volume}% ",
-        "format-source-muted": "",
+        "format": "{volume}% {icon}",
         "format-icons": {
             "headphone": "",
             "hands-free": "",
@@ -63,10 +51,12 @@
         "format-alt": "{time} {icon}",
         "format-icons": ["", "", "", "", ""]
     },
-    "clock": {
-	"format": "{:%H:%M}",
+    "clock#date": {
+	"format": " {:%a %Y-%m-%d}",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "{:%a %Y-%m-%d}"
+    },
+    "clock#time": {
+	"format": " {:%H:%M}",
     },
     "tray": {
         "icon-size": 27,
@@ -74,7 +64,7 @@
     },
     "custom/updates": {
 	"format": " {}",
-	"interval": 60,
+	"interval": 600,
 	"exec": "yay -Qqu | wc -l | sed 's/^0$//'",
     },
     "custom/spotify": {
