@@ -1,3 +1,3 @@
-require('plugins')
 require('config')
-require('lsp')
+require('remap')
+require('plugins')

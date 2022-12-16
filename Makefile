@@ -27,11 +27,10 @@ font:
 
 nvim:
 	mkdir -p ${HOME}/.config/nvim
-	mkdir -p ${HOME}/.config/nvim/lua
-	ln -fs $(CURDIR)/nvim/init.lua ${HOME}/.config/nvim/init.lua
-	ln -fs $(CURDIR)/nvim/plugins.lua ${HOME}/.config/nvim/lua/plugins.lua
+	ln -fs $(CURDIR)/nvim/lua ${HOME}/.config/nvim/
+	ln -fs $(CURDIR)/nvim/after ${HOME}/.config/nvim/
 	ln -fs $(CURDIR)/nvim/config.lua ${HOME}/.config/nvim/lua/config.lua
-	ln -fs $(CURDIR)/nvim/lsp.lua ${HOME}/.config/nvim/lua/lsp.lua
+	ln -fs $(CURDIR)/nvim/init.lua ${HOME}/.config/nvim/init.lua
 
 spotify:
 	ln -fs $(CURDIR)/spotify/config.yml ${HOME}/.config/spotify-tui/config.yml
