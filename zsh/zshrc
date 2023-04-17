@@ -56,7 +56,7 @@ plugins=(git battery kubectl alias-tips zsh-autosuggestions fzf)
 
 export GOPATH=~/go
 
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:$GOPATH/bin:/home/miles/bin"
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:$GOPATH/bin:/home/miles/bin:/usr/local/bin/ltex-ls/bin"
 
 source $ZSH/oh-my-zsh.sh
 source <(helm completion zsh)
@@ -106,6 +106,7 @@ alias ing="get ing"
 alias configmaps="get configmaps"
 alias secrets="get secrets"
 alias sandbox="kubectl config use-context sandbox"
+alias development="kubectl config use-context development"
 alias staging="kubectl config use-context staging"
 alias production="kubectl config use-context production"
 alias shared="kubectl config use-context shared"
@@ -120,10 +121,17 @@ function sunglasses() {
   echo     " (⌐■_■)     ";   sleep 1;
 }
 
+function stopwatch() {
+  start=$(date +%s)
+  while true; do
+      time="$(($(date +%s) - $start))"
+      printf '%s\r' "$(date -u -d "@$time" +%H:%M:%S)"
+  done
+}
 #export QT_AUTO_SCREEN_SCALE_FACTOR=1
 #export QT_SCALE_FACTOR=1.75
 
-export BROWSER=firefox
+export BROWSER=chromium
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/home/miles/google-cloud-sdk/path.zsh.inc' ]; then . '/home/miles/google-cloud-sdk/path.zsh.inc'; fi
@@ -149,8 +157,21 @@ export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
 export XMODIFIERS=@im=fcitx
 
-export GTK_THEME=Dracula
+export GTK_THEME="Catppuccin-Mocha"
 
 export XDG_SCREENSHOTS_DIR=~/screenshots
 
 . "$HOME/.cargo/env"
+
+export HISTFILESIZE=1000000000
+export HISTSIZE=1000000000
+setopt INC_APPEND_HISTORY
+export HISTTIMEFORMAT="[%F %T] "
+setopt EXTENDED_HISTORY
+setopt HIST_FIND_NO_DUPS
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+eval "$(rbenv init - zsh)"
