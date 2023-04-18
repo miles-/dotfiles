@@ -261,7 +261,6 @@ exec_always mako
 #
 # Make certain applications floating
 #
-for_window [app_id="zoom"] floating enable
 for_window [class="1Password"] floating enable
 
 include /etc/sway/config.d/*
