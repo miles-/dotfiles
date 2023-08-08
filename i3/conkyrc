@@ -1,0 +1,31 @@
+conky.config = {
+	background = false,
+	out_to_console = true,
+	out_to_x = false,
+	own_window = false,
+	update_interval = 15,
+	total_run_times = 0,
+	short_units = true,
+	pad_percents = 3,
+	cpu_avg_samples = 2,
+	no_buffers = true,
+};
+
+conky.text = [[
+[
+{"full_text": "${execpi 3600 ~/bin/weather.sh 11231}", "color":"\#83ccd2"},
+{"full_text": ": ${execpi 3600 yay -Qu | wc -l}", "color":"\#00FFFF"},
+${if_running spotify} {"full_text":": ${exec ~/bin/spotify-nowplaying.sh }","color":"\#89b859"}, ${endif}\
+{"full_text": ": ${cpu}%", "color":"\#cf6a4c"},
+{"full_text": ": $mem","color":"\#cda869"},
+{"full_text": "${exec ~/bin/bat_icon.sh}", "color":"\#254AB8"},
+${if_up wlp0s20f3} { "full_text" : "(${wireless_essid wlp0s20f3}) ${addr wlp0s20f3}" , "color" : "\#00cc00" }, ${else}\
+    ${if_up enp0s20f0u2} { "full_text" : "Eth: ${addr enp0s20f0u2}" , "color" : "\#00cc00" }, ${else}\
+       ${if_up enp0s20u1} { "full_text" : "USB: ${addr enp0s20u1}" , "color" :"\#00cc00" }, ${else}\
+            { "full_text" : "No Network" , "color" : "\#ff0000" },\
+        ${endif}\
+    ${endif}\
+${endif}\
+{"full_text": ": ${time %a, %m / %d / %Y}", "color":"\#afc4db"}, 
+{"full_text": "${time %l:%M%p}", "color":"\#8f9d6a"} ],
+]];
