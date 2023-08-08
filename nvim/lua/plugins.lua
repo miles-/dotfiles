@@ -31,6 +31,9 @@ require('packer').startup(function()
   -- Misc
   use 'tpope/vim-commentary' -- "gc" to comment visual regions/lines
   use 'tpope/vim-sleuth'
+  -- Prettier
+  use 'jose-elias-alvarez/null-ls.nvim'
+  use 'MunifTanjim/prettier.nvim'
   -- Color
   use 'dracula/vim'
   use {
