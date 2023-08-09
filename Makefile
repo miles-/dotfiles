@@ -33,8 +33,10 @@ mako:
 
 i3:
 	mkdir -p ${HOME}/.config/i3
-	# add alias for i3
+	mkdir -p ${HOME}/.config/i3status
+	# add aliases for i3
 	ln -fs $(CURDIR)/i3/config ${HOME}/.config/i3/config
+	ln -fs $(CURDIR)/i3/i3status ${HOME}/.config/i3status/config
 
 nvim:
 	mkdir -p ${HOME}/.config/nvim

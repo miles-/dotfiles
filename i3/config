@@ -117,6 +117,7 @@ exec --no-startup-id volumeicon
 exec --no-startup-id nm-applet
 exec_always --no-startup-id dunst
 exec --no-startup-id xsetroot -solid "#000000"
+exec_always --no-startup-id /home/miles/.screenlayout/default.sh
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace 1
 bindsym $mod+Shift+2 move container to workspace 2
@@ -194,6 +195,7 @@ set $crust     #11111b
 bar {
         font pango:Noto Sans Mono 11
         status_command i3status
+        tray_output DP1
 
         colors {
           background $base
