@@ -1,7 +1,4 @@
-[[ -f ~/.Xmodmap ]] && xmodmap ~/.Xmodmap
-
-xrdb -merge ~/.Xdefaults
-xrdb -merge ~/.Xmodmap
+[[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
 
 autocutsel -fork &
 autocutsel -selection PRIMARY -fork &

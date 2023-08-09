@@ -1,5 +1,5 @@
 [global]
-    font = Inconsolata 14
+    font = Noto Sans Mono 10
     
     # Allow a small subset of html markup:
     #   <b>bold</b>
@@ -171,23 +171,23 @@
     # Context menu.
     context = ctrl+shift+period
 
+# Catppuccin mocha
+[global]
+frame_color = "#89B4FA"
+separator_color= frame
+
 [urgency_low]
-    # IMPORTANT: colors have to be defined in quotation marks.
-    # Otherwise the "#" and following would be interpreted as a comment.
-    background = "#222222"
-    foreground = "#888888"
-    timeout = 10
+background = "#1E1E2E"
+foreground = "#CDD6F4"
 
 [urgency_normal]
-    background = "#285577"
-    foreground = "#ffffff"
-    timeout = 10
+background = "#1E1E2E"
+foreground = "#CDD6F4"
 
 [urgency_critical]
-    background = "#900000"
-    foreground = "#ffffff"
-    timeout = 0
-
+background = "#1E1E2E"
+foreground = "#CDD6F4"
+frame_color = "#FAB387"
 
 # Every section that isn't one of the above is interpreted as a rules to
 # override settings for certain messages.

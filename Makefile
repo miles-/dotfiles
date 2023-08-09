@@ -1,6 +1,6 @@
-.PHONY: all alacritty bin dunst font mako nvim spotify sway tmux waybar x zsh
+.PHONY: all alacritty bin dunst font i3 mako nvim spotify sway tmux waybar x zsh
 
-all: alacritty bin dunst font mako nvim spotify sway tmux waybar x zsh
+all: alacritty bin dunst font i3 mako nvim spotify sway tmux waybar x zsh
 
 alacritty:
 	mkdir -p ${HOME}/.config/alacritty
@@ -31,6 +31,11 @@ mako:
 	# add alias for mako
 	ln -fs $(CURDIR)/mako/config ${HOME}/.config/mako/config
 
+i3:
+	mkdir -p ${HOME}/.config/i3
+	# add alias for i3
+	ln -fs $(CURDIR)/i3/config ${HOME}/.config/i3/config
+
 nvim:
 	mkdir -p ${HOME}/.config/nvim
 	ln -fs $(CURDIR)/nvim/lua ${HOME}/.config/nvim/
@@ -55,7 +60,7 @@ waybar:
 
 x:
 	# add aliases for X
-	ln -fs $(CURDIR)/x/Xdefaults ${HOME}/.Xdefaults
+	ln -fs $(CURDIR)/x/Xresources ${HOME}/.Xresources
 	ln -fs $(CURDIR)/x/xinitrc ${HOME}/.xinitrc
 	sudo ln -fs $(CURDIR)/x/30-touchpad.conf /etc/X11/xorg.conf.d/30-touchpad.conf
 
