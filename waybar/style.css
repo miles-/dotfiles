@@ -2,10 +2,8 @@
 
 * {
     border: none;
-    border-radius: 0;
     font-family: monospace;
     font-size: 10;
-    min-height: 0;
 }
 
 window#waybar {
@@ -36,7 +34,7 @@ tooltip label {
 #network,
 #clock,
 #tray {
-    padding: 0 10px;
+    padding: 0 4px;
     margin: 3px 1px;
     border-radius: 2px;
     color: @text;

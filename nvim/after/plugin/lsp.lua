@@ -15,6 +15,7 @@ lsp.ensure_installed({
   'sumneko_lua',
   'tailwindcss',
   'terraformls',
+  'tflint',
   'tsserver',
 })
 

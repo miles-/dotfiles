@@ -1,7 +1,7 @@
 {
     "layer": "top", // Waybar at top layer
     "position": "bottom", // Waybar position (top|bottom|left|right)
-    "spacing": 4, // Gaps between modules (8px)
+    "spacing": 0, // Gaps between modules (8px)
     "modules-left": ["sway/workspaces"],
     "modules-center": [],
     "modules-right": ["custom/weather", "pulseaudio", "cpu", "memory", "backlight", "battery", "network", "clock#date", "clock#time", "tray"],
@@ -60,7 +60,7 @@
     },
     "tray": {
         "icon-size": 27,
-        "spacing": 10
+        "spacing": 0
     },
     "custom/updates": {
 	"format": " {}",
