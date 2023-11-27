@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/home/miles/.oh-my-zsh
+export ZSH=${HOME}/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -50,17 +50,15 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git battery kubectl alias-tips zsh-autosuggestions fzf)
+plugins=(git battery kubectl alias-tips zsh-autosuggestions fzf kube-ps1)
 
 # User configuration
 
 export GOPATH=~/go
 
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:$GOPATH/bin:/home/miles/bin:/usr/local/bin/ltex-ls/bin"
-
 source $ZSH/oh-my-zsh.sh
 source <(helm completion zsh)
-source /opt/kube-ps1/kube-ps1.sh
+source /opt/homebrew/opt/kube-ps1/share/kube-ps1.sh
 KUBE_PS1_SYMBOL_ENABLE=false
 KUBE_PS1_PREFIX="(k: "
 # You may need to manually set your language environment
@@ -128,40 +126,10 @@ function stopwatch() {
       printf '%s\r' "$(date -u -d "@$time" +%H:%M:%S)"
   done
 }
-#export QT_AUTO_SCREEN_SCALE_FACTOR=1
-#export QT_SCALE_FACTOR=1.75
 
-export BROWSER=chromium
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/miles/google-cloud-sdk/path.zsh.inc' ]; then . '/home/miles/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/home/miles/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/miles/google-cloud-sdk/completion.zsh.inc'; fi
-
-export USE_GKE_GCLOUD_AUTH_PLUGIN=True
-
-TIMEFMT=$'real\t%E\nuser\t%U\nsys\t%S'
+export BROWSER=google-chrome
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-eval "$(pyenv init -)"
-
-autoload -U compinit
-compinit -i
-
-export MOZ_ENABLE_WAYLAND=1
-export MOZ_DBUS_REMOTE=1
-
-export GTK_IM_MODULE=fcitx
-export QT_IM_MODULE=fcitx
-export XMODIFIERS=@im=fcitx
-
-export GTK_THEME="Catppuccin-Mocha"
-
-export XDG_SCREENSHOTS_DIR=~/screenshots
-
-. "$HOME/.cargo/env"
 
 export HISTFILESIZE=1000000000
 export HISTSIZE=1000000000
@@ -170,8 +138,6 @@ export HISTTIMEFORMAT="[%F %T] "
 setopt EXTENDED_HISTORY
 setopt HIST_FIND_NO_DUPS
 
-#export NVM_DIR="$HOME/.nvm"
-#[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-#[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-eval "$(rbenv init - zsh)"
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
