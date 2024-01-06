@@ -1,0 +1,11 @@
+import = [
+  "~/.config/alacritty/catppuccin/catppuccin-mocha.toml"
+]
+
+# Font
+[font]
+  normal = { family = "monospace", style = "Regular" }
+  bold = { family = "monospace", style = "Bold" }
+  italic = { family = "monospace", style = "Italic" }
+  bold_italic = { family = "monospace", style = "Italic" }
+  size = 12
