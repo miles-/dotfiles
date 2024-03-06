@@ -41,7 +41,6 @@ i3:
 nvim:
 	mkdir -p ${HOME}/.config/nvim
 	ln -fs $(CURDIR)/nvim/lua ${HOME}/.config/nvim/
-	ln -fs $(CURDIR)/nvim/after ${HOME}/.config/nvim/
 	ln -fs $(CURDIR)/nvim/init.lua ${HOME}/.config/nvim/init.lua
 
 spotify:
