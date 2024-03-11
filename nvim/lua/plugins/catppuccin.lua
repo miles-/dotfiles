@@ -21,7 +21,6 @@ return {
           cmp = true,
           fidget = true,
           gitsigns = true,
-          indent_blankline = { enabled = true },
           mason = true,
           native_lsp = { enabled = true },
           telescope = true,
