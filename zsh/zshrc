@@ -58,7 +58,11 @@ export GOPATH=~/go
 
 source $ZSH/oh-my-zsh.sh
 source <(helm completion zsh)
-source /opt/homebrew/opt/kube-ps1/share/kube-ps1.sh
+if [[ $(uname) == "Linux" ]]; then
+  source /opt/kube-ps1/kube-ps1.sh
+elif [[ $(uname) == "Darwin" ]]; then
+  source /opt/homebrew/opt/kube-ps1/share/kube-ps1.sh
+fi
 KUBE_PS1_SYMBOL_ENABLE=false
 KUBE_PS1_PREFIX="(k: "
 # You may need to manually set your language environment
@@ -130,6 +134,9 @@ function stopwatch() {
 export BROWSER=google-chrome
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export GTK_THEME="Catppuccin-Mocha"
+export XDG_SCREENSHOTS_DIR=~/screenshots
 
 export HISTFILESIZE=1000000000
 export HISTSIZE=1000000000

@@ -67,4 +67,5 @@ x:
 
 zsh:
 	# add aliases for zsh
+	ln -fs $(CURDIR)/zsh/zprofile ${HOME}/.zprofile
 	ln -fs $(CURDIR)/zsh/zshrc ${HOME}/.zshrc
