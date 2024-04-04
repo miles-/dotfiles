@@ -16,16 +16,17 @@ require('lazy').setup {
   -- modular approach: using `require path/name'` will
   -- include a plugin definition from file lua/path/name.lua
 
-  require 'plugins/gitsigns',
-  require 'plugins/which-key',
-  require 'plugins/telescope',
-  require 'plugins/lspconfig',
-  require 'plugins/conform',
-  require 'plugins/cmp',
   require 'plugins/catppuccin',
-  require 'plugins/todo-comments',
+  require 'plugins/cmp',
+  require 'plugins/conform',
+  require 'plugins/gitsigns',
+  require 'plugins/lspconfig',
+  require 'plugins/markdown-preview',
   require 'plugins/mini',
+  require 'plugins/telescope',
+  require 'plugins/todo-comments',
   require 'plugins/treesitter',
+  require 'plugins/which-key',
 }
 
 -- vim: ts=2 sts=2 sw=2 et
