@@ -4,8 +4,11 @@ import = [
 
 # Font
 [font]
-  normal = { family = "monospace", style = "Regular" }
-  bold = { family = "monospace", style = "Bold" }
-  italic = { family = "monospace", style = "Italic" }
-  bold_italic = { family = "monospace", style = "Italic" }
-  size = 12
+  normal = { family = "Inconsolata", style = "Regular" }
+  bold = { family = "Inconsolata", style = "Bold" }
+  italic = { family = "Inconsolata", style = "Italic" }
+  bold_italic = { family = "Inconsolata", style = "Italic" }
+  size = 16
+
+[window]
+  decorations = "none"

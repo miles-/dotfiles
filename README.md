@@ -1,8 +1,13 @@
-## dotfiles
+# dotfiles
 
 These are my dotfiles. \o/
 
-**install**
+## Install
+
 ```console
-$ make
+$ make linux
+```
+or
+```console
+$ make mac
 ```
