@@ -1,6 +1,4 @@
-.PHONY: all alacritty bin dunst font i3 mako nvim spotify sway tmux waybar x zsh
-
-all: alacritty bin dunst font i3 mako nvim spotify sway tmux waybar x zsh
+.PHONY: alacritty bin dunst font i3 linux mac mako nvim skhd spacebar spotify sway tmux waybar x yabai zsh
 
 alacritty:
 	mkdir -p ${HOME}/.config/alacritty
@@ -26,11 +24,6 @@ font:
 	mkdir -p ${HOME}/.config/fontconfig
 	ln -fs $(CURDIR)/font/fonts.conf ${HOME}/.config/fontconfig/fonts.conf
 
-mako:
-	mkdir -p ${HOME}/.config/mako
-	# add alias for mako
-	ln -fs $(CURDIR)/mako/config ${HOME}/.config/mako/config
-
 i3:
 	mkdir -p ${HOME}/.config/i3
 	mkdir -p ${HOME}/.config/i3status
@@ -38,10 +31,27 @@ i3:
 	ln -fs $(CURDIR)/i3/config ${HOME}/.config/i3/config
 	ln -fs $(CURDIR)/i3/i3status ${HOME}/.config/i3status/config
 
+linux: alacritty bin dunst font i3 mako nvim spotify sway tmux waybar x zsh
+
+mac: alacritty nvim skhd spacebar tmux yabai zsh
+
+mako:
+	mkdir -p ${HOME}/.config/mako
+	# add alias for mako
+	ln -fs $(CURDIR)/mako/config ${HOME}/.config/mako/config
+
 nvim:
 	mkdir -p ${HOME}/.config/nvim
 	ln -fs $(CURDIR)/nvim/lua ${HOME}/.config/nvim/
 	ln -fs $(CURDIR)/nvim/init.lua ${HOME}/.config/nvim/init.lua
+
+skhd:
+	mkdir -p ${HOME}/.config/skhd
+	ln -fs $(CURDIR)/skhd/skhdrc ${HOME}/.config/skhd/skhdrc
+
+spacebar:
+	mkdir -p ${HOME}/.config/spacebar
+	ln -fs $(CURDIR)/spacebar/spacebarrc ${HOME}/.config/spacebar/spacebarrc
 
 spotify:
 	ln -fs $(CURDIR)/spotify/config.yml ${HOME}/.config/spotify-tui/config.yml
@@ -64,6 +74,10 @@ x:
 	ln -fs $(CURDIR)/x/Xresources ${HOME}/.Xresources
 	ln -fs $(CURDIR)/x/xinitrc ${HOME}/.xinitrc
 	sudo ln -fs $(CURDIR)/x/30-touchpad.conf /etc/X11/xorg.conf.d/30-touchpad.conf
+
+yabai:
+	mkdir -p ${HOME}/.config/yabai
+	ln -fs $(CURDIR)/yabai/yabairc ${HOME}/.config/yabai/yabairc
 
 zsh:
 	# add aliases for zsh
