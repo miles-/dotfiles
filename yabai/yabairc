@@ -1,0 +1,29 @@
+# default layout (can be bsp, stack or float)
+yabai -m config layout bsp
+
+# center mouse on window with focus
+yabai -m config mouse_follows_focus on
+yabai -m config focus_follows_mouse autoraise
+
+# modifier for clicking and dragging with mouse
+yabai -m config mouse_modifier alt
+# set modifier + left-click drag to move window
+yabai -m config mouse_action1 move
+# set modifier + right-click drag to resize window
+yabai -m config mouse_action2 resize
+
+# when window is dropped in center of another window, swap them (on edges it will split it)
+yabai -m mouse_drop_action swap
+
+# disable window shadows
+yabai -m config window_shadow off
+
+# spacebar padding on top screen
+SPACEBAR_HEIGHT=$(spacebar -m config height)
+yabai -m config external_bar all:$SPACEBAR_HEIGHT:0
+
+# float system preferences
+yabai -m rule --add app="^System Settings$" manage=off
+
+# float settings windows
+yabai -m rule --add title='Settings$' manage=off
