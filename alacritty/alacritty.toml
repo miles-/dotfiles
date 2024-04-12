@@ -4,11 +4,14 @@ import = [
 
 # Font
 [font]
-  normal = { family = "Inconsolata", style = "Regular" }
-  bold = { family = "Inconsolata", style = "Bold" }
-  italic = { family = "Inconsolata", style = "Italic" }
-  bold_italic = { family = "Inconsolata", style = "Italic" }
+  normal = { family = "Inconsolata Nerd Font", style = "Regular" }
+  bold = { family = "Inconsolata Nerd Font", style = "Bold" }
+  italic = { family = "Inconsolata Nerd Font", style = "Italic" }
+  bold_italic = { family = "Inconsolata Nerd Font", style = "Italic" }
   size = 16
 
 [window]
   decorations = "none"
+
+[scrolling]
+  history = 100000
