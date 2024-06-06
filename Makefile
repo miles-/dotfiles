@@ -1,4 +1,4 @@
-.PHONY: aerospace alacritty bin dunst font i3 linux mac mako nvim spacebar spotify sway tmux waybar x zsh
+.PHONY: aerospace alacritty bin dunst font i3 linux mac mako nvim sketchybar spotify sway tmux waybar x zsh
 
 aerospace:
 	ln -fs $(CURDIR)/aerospace/aerospace.toml ${HOME}/.aerospace.toml
@@ -36,7 +36,7 @@ i3:
 
 linux: alacritty bin dunst font i3 mako nvim spotify sway tmux waybar x zsh
 
-mac: aerospace alacritty nvim spacebar tmux zsh
+mac: aerospace alacritty nvim sketchybar tmux zsh
 
 mako:
 	mkdir -p ${HOME}/.config/mako
@@ -48,9 +48,10 @@ nvim:
 	ln -fs $(CURDIR)/nvim/lua ${HOME}/.config/nvim/
 	ln -fs $(CURDIR)/nvim/init.lua ${HOME}/.config/nvim/init.lua
 
-spacebar:
-	mkdir -p ${HOME}/.config/spacebar
-	ln -fs $(CURDIR)/spacebar/spacebarrc ${HOME}/.config/spacebar/spacebarrc
+sketchybar:
+	mkdir -p ${HOME}/.config/sketchybar
+	ln -fs $(CURDIR)/sketchybar/sketchybarrc ${HOME}/.config/sketchybar/sketchybarrc
+	ln -fs $(CURDIR)/sketchybar/plugins ${HOME}/.config/sketchybar
 
 spotify:
 	ln -fs $(CURDIR)/spotify/config.yml ${HOME}/.config/spotify-tui/config.yml
