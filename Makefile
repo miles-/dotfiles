@@ -1,4 +1,7 @@
-.PHONY: alacritty bin dunst font i3 linux mac mako nvim skhd spacebar spotify sway tmux waybar x yabai zsh
+.PHONY: aerospace alacritty bin dunst font i3 linux mac mako nvim spacebar spotify sway tmux waybar x zsh
+
+aerospace:
+	ln -fs $(CURDIR)/aerospace/aerospace.toml ${HOME}/.aerospace.toml
 
 alacritty:
 	mkdir -p ${HOME}/.config/alacritty
@@ -33,7 +36,7 @@ i3:
 
 linux: alacritty bin dunst font i3 mako nvim spotify sway tmux waybar x zsh
 
-mac: alacritty nvim skhd spacebar tmux yabai zsh
+mac: aerospace alacritty nvim spacebar tmux zsh
 
 mako:
 	mkdir -p ${HOME}/.config/mako
@@ -44,10 +47,6 @@ nvim:
 	mkdir -p ${HOME}/.config/nvim
 	ln -fs $(CURDIR)/nvim/lua ${HOME}/.config/nvim/
 	ln -fs $(CURDIR)/nvim/init.lua ${HOME}/.config/nvim/init.lua
-
-skhd:
-	mkdir -p ${HOME}/.config/skhd
-	ln -fs $(CURDIR)/skhd/skhdrc ${HOME}/.config/skhd/skhdrc
 
 spacebar:
 	mkdir -p ${HOME}/.config/spacebar
@@ -74,10 +73,6 @@ x:
 	ln -fs $(CURDIR)/x/Xresources ${HOME}/.Xresources
 	ln -fs $(CURDIR)/x/xinitrc ${HOME}/.xinitrc
 	sudo ln -fs $(CURDIR)/x/30-touchpad.conf /etc/X11/xorg.conf.d/30-touchpad.conf
-
-yabai:
-	mkdir -p ${HOME}/.config/yabai
-	ln -fs $(CURDIR)/yabai/yabairc ${HOME}/.config/yabai/yabairc
 
 zsh:
 	# add aliases for zsh
