@@ -50,7 +50,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git battery kubectl zsh-autosuggestions fzf kube-ps1 asdf)
+plugins=(aws git battery kubectl zsh-autosuggestions fzf kube-ps1 asdf)
 
 # User configuration
 
@@ -66,6 +66,12 @@ elif [[ $(uname) == "Darwin" ]]; then
 fi
 KUBE_PS1_SYMBOL_ENABLE=false
 KUBE_PS1_PREFIX="(k: "
+SHOW_AWS_PROMPT=false
+RPROMPT="${RPROMPT//\$\(aws_prompt_info\)}"
+ZSH_THEME_AWS_PROFILE_PREFIX="(a: "
+ZSH_THEME_AWS_PROFILE_SUFFIX=") "
+ZSH_THEME_AWS_REGION_PREFIX="(r: "
+ZSH_THEME_AWS_REGION_SUFFIX=") "
 # You may need to manually set your language environment
 export LANG=en_US.UTF-8
 

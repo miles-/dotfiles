@@ -60,7 +60,6 @@ vim.opt.scrolloff = 10
 vim.filetype.add {
   extension = {
     tf = 'terraform',
-    hcl = 'terraform',
   },
 }
 

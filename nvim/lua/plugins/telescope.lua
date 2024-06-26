@@ -55,6 +55,18 @@ return {
             require('telescope.themes').get_dropdown(),
           },
         },
+        pickers = {
+          find_files = {
+            hidden = true,
+            file_ignore_patterns = { 'node_modules', '.git/', '.venv' },
+          },
+          live_grep = {
+            additional_args = function()
+              return { '--hidden' }
+            end,
+            file_ignore_patterns = { 'node_modules', '.git/', '.venv' },
+          },
+        },
       }
 
       -- Enable telescope extensions, if they are installed
