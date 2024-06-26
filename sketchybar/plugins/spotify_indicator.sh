@@ -15,9 +15,9 @@ if [ "$(osascript -e 'if application "Spotify" is running then tell application 
 fi
 if [ $RUNNING -eq 0 ] && [ $PLAYING -eq 0 ]; then
   if [ "$ARTIST" == "" ]; then
-    sketchybar --set $NAME label=" $TRACK - $ALBUM" --set '/spot.*/' drawing=on
+    sketchybar --set $NAME label="$TRACK - $ALBUM" --set '/spot.*/' drawing=on
   else
-    sketchybar --set $NAME label=" $TRACK - $ARTIST" --set '/spot.*/' drawing=on
+    sketchybar --set $NAME label="$TRACK - $ARTIST" --set '/spot.*/' drawing=on
   fi
 else
   sketchybar --set '/spot.*/' drawing=off
