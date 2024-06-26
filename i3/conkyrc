@@ -13,7 +13,6 @@ conky.config = {
 
 conky.text = [[
 [
-{"full_text": "${execpi 3600 ~/bin/weather.sh 11231}", "color":"\#83ccd2"},
 {"full_text": ": ${execpi 3600 yay -Qu | wc -l}", "color":"\#00FFFF"},
 ${if_running spotify} {"full_text":": ${exec ~/bin/spotify-nowplaying.sh }","color":"\#89b859"}, ${endif}\
 {"full_text": ": ${cpu}%", "color":"\#cf6a4c"},
