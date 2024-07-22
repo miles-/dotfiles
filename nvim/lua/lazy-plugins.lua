@@ -9,7 +9,6 @@
 --    :Lazy update
 require('lazy').setup {
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
-  { 'numToStr/Comment.nvim', opts = {} }, -- "gc" to comment visual regions/lines
   'tpope/vim-fugitive', -- Git commands in neovim
   'tpope/vim-rhubarb', -- Fugitive-companion to interact with GitHub
 
