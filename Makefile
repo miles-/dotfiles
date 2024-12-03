@@ -47,6 +47,7 @@ nvim:
 	mkdir -p ${HOME}/.config/nvim
 	ln -fs $(CURDIR)/nvim/lua ${HOME}/.config/nvim/
 	ln -fs $(CURDIR)/nvim/init.lua ${HOME}/.config/nvim/init.lua
+	ln -fs $(CURDIR)/nvim/lazy-lock.json ${HOME}/.config/nvim/lazy-lock.json
 
 sketchybar:
 	mkdir -p ${HOME}/.config/sketchybar

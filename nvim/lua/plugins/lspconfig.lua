@@ -108,7 +108,7 @@ return {
             })
           end
 
-          -- The following autocommand is used to enable inlay hints in your
+          -- The following code creates a keymap to toggle inlay hints in your
           -- code, if the language server you are using supports them
           --
           -- This may be unwanted, since they displace some of your code
@@ -178,7 +178,7 @@ return {
         sqls = {},
         terraformls = {},
         tflint = {},
-        tsserver = {},
+        ts_ls = {},
         yamlls = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
       }
