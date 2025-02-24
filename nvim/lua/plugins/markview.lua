@@ -7,6 +7,7 @@ return {
         preview = {
           modes = { 'n', 'no', 'c' }, -- Change these mode to what you need
           hybrid_modes = { 'n' }, -- Uses this feature on normal mode
+
           -- This is nice to have
           callbacks = {
             on_enable = function(_, win)
