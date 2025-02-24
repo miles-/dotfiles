@@ -178,7 +178,6 @@ return {
         sqls = {},
         terraformls = {},
         tflint = {},
-        ts_ls = {},
         yamlls = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
       }

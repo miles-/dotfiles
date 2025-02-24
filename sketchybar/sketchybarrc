@@ -69,11 +69,11 @@ sketchybar --add item clock right \
            --subscribe volume volume_change \
            --add item battery right \
            --set battery update_freq=120 script="$PLUGIN_DIR/battery.sh" \
-           --subscribe battery system_woke power_source_change \
-           --add item network right \
-           --set network icon= script="$PLUGIN_DIR/network.sh" \
-           --add item spotify right \
-           --set spotify update_freq=1 icon= icon.color=0xff1db954 script="$PLUGIN_DIR/spotify_indicator.sh"
+           --subscribe battery system_woke power_source_change 
+#           --add item network right \
+#           --set network icon= script="$PLUGIN_DIR/network.sh" \
+#           --set spotify update_freq=1 icon= icon.color=0xff1db954 script="$PLUGIN_DIR/spotify_indicator.sh" \
+#           --add item spotify right
 
 ##### Force all scripts to run the first time (never do this in a script) #####
 sketchybar --update
