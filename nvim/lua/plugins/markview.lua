@@ -4,6 +4,9 @@ return {
     lazy = false,
     init = function()
       require('markview').setup {
+        experimental = {
+          check_rtp_message = false, -- Hide the warning message
+        },
         preview = {
           modes = { 'n', 'no', 'c' }, -- Change these mode to what you need
           hybrid_modes = { 'n' }, -- Uses this feature on normal mode
