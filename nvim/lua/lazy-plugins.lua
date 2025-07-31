@@ -16,6 +16,7 @@ require('lazy').setup {
   -- include a plugin definition from file lua/path/name.lua
 
   require 'plugins/catppuccin',
+  require 'plugins/claudecode',
   require 'plugins/cmp',
   require 'plugins/conform',
   require 'plugins/copilot',
