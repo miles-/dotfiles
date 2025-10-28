@@ -16,7 +16,11 @@ exec-on-workspace-change = ['/bin/bash', '-c',
 start-at-login = true
 
 [gaps]
-outer.top = 32
+outer.top = [
+  { monitor."built-in" = 0 },
+  { monitor."main" = 32 },
+  32
+]
 
 [mode.main.binding]
 cmd-enter = 'exec-and-forget open -n /Applications/Alacritty.app'
