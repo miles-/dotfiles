@@ -1,4 +1,4 @@
-.PHONY: aerospace alacritty bin brew dunst font i3 linux mac mako nvim sketchybar spotify sway tmux waybar x zsh
+.PHONY: aerospace alacritty bin brew check dunst font i3 linux mac mako nvim sketchybar spotify sway tmux waybar x zsh
 
 brew:
 	brew bundle
@@ -39,7 +39,7 @@ i3:
 
 linux: alacritty bin dunst font i3 mako nvim spotify sway tmux waybar x zsh
 
-mac: aerospace alacritty nvim sketchybar tmux zsh
+mac: brew aerospace alacritty nvim sketchybar tmux zsh
 
 mako:
 	mkdir -p ${HOME}/.config/mako
@@ -83,3 +83,27 @@ zsh:
 	# add aliases for zsh
 	ln -fs $(CURDIR)/zsh/zprofile ${HOME}/.zprofile
 	ln -fs $(CURDIR)/zsh/zshrc ${HOME}/.zshrc
+
+check:
+	@ok=0; fail=0; \
+	check() { \
+	  if [ -L "$$2" ] && [ "$$(readlink $$2)" = "$$1" ]; then \
+	    echo "  ok  $$2"; ok=$$((ok+1)); \
+	  elif [ -e "$$2" ]; then \
+	    echo "  BAD $$2 -> $$(readlink $$2  2>/dev/null || echo '(not a symlink)')"; fail=$$((fail+1)); \
+	  else \
+	    echo "  --  $$2 (missing)"; fail=$$((fail+1)); \
+	  fi; \
+	}; \
+	check $(CURDIR)/aerospace/aerospace.toml ${HOME}/.aerospace.toml; \
+	check $(CURDIR)/alacritty/alacritty.toml ${HOME}/.config/alacritty/alacritty.toml; \
+	check $(CURDIR)/alacritty/catppuccin/catppuccin-mocha.toml ${HOME}/.config/alacritty/catppuccin/catppuccin-mocha.toml; \
+	check $(CURDIR)/nvim/lua ${HOME}/.config/nvim/lua; \
+	check $(CURDIR)/nvim/init.lua ${HOME}/.config/nvim/init.lua; \
+	check $(CURDIR)/nvim/lazy-lock.json ${HOME}/.config/nvim/lazy-lock.json; \
+	check $(CURDIR)/sketchybar/sketchybarrc ${HOME}/.config/sketchybar/sketchybarrc; \
+	check $(CURDIR)/sketchybar/plugins ${HOME}/.config/sketchybar/plugins; \
+	check $(CURDIR)/tmux/tmux.conf ${HOME}/.tmux.conf; \
+	check $(CURDIR)/zsh/zprofile ${HOME}/.zprofile; \
+	check $(CURDIR)/zsh/zshrc ${HOME}/.zshrc; \
+	echo ""; echo "$$ok ok, $$fail failed"
