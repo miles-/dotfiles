@@ -12,8 +12,8 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 -- Exit terminal mode
 vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
--- Netrw shortcut
-vim.keymap.set('n', '<leader>pv', '<cmd>Neotree reveal<CR>', { desc = 'Open Neo-tree' })
+-- Neo-tree shortcut
+vim.keymap.set('n', '<leader>pv', '<cmd>Neotree reveal position=current<CR>', { desc = 'Open Neo-tree fullscreen' })
 
 -- Allows C-d and C-u (middle upwards or downwards jumping) with cursor (and
 -- therefore the whole line) kept in the middle of the screen
