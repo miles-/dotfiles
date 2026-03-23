@@ -74,7 +74,7 @@ ZSH_THEME_AWS_REGION_SUFFIX=") "
 # You may need to manually set your language environment
 export LANG=en_US.UTF-8
 
-export EDITOR='vim'
+export EDITOR='nvim'
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
@@ -138,7 +138,9 @@ function stopwatch() {
   done
 }
 
-export BROWSER=google-chrome
+if [[ $(uname) == "Linux" ]]; then
+  export BROWSER=google-chrome
+fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 

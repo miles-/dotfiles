@@ -13,7 +13,7 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
 -- Netrw shortcut
-vim.keymap.set('n', '<leader>pv', vim.cmd.Ex, { desc = 'Open netrw' })
+vim.keymap.set('n', '<leader>pv', '<cmd>Neotree reveal<CR>', { desc = 'Open Neo-tree' })
 
 -- Allows C-d and C-u (middle upwards or downwards jumping) with cursor (and
 -- therefore the whole line) kept in the middle of the screen
@@ -28,7 +28,7 @@ vim.keymap.set('n', '<C-u>', '<C-u>zz')
 --  See `:help vim.highlight.on_yank()`
 vim.api.nvim_create_autocmd('TextYankPost', {
   desc = 'Highlight when yanking (copying) text',
-  group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
+  group = vim.api.nvim_create_augroup('highlight-yank', { clear = true }),
   callback = function()
     vim.highlight.on_yank()
   end,
