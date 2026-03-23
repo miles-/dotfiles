@@ -1,4 +1,7 @@
-.PHONY: aerospace alacritty bin dunst font i3 linux mac mako nvim sketchybar spotify sway tmux waybar x zsh
+.PHONY: aerospace alacritty bin brew dunst font i3 linux mac mako nvim sketchybar spotify sway tmux waybar x zsh
+
+brew:
+	brew bundle
 
 aerospace:
 	ln -fs $(CURDIR)/aerospace/aerospace.toml ${HOME}/.aerospace.toml
