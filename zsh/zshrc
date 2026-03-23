@@ -121,6 +121,7 @@ alias shared="kubectl config use-context shared"
 alias tf="terraform"
 alias vim="nvim"
 alias finder="open ."
+alias note='echo "- $*" >> ~/notes/$(date +%Y-%m-%d).md'
 
 DEFAULT_USER=miles
 
