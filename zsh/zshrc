@@ -121,6 +121,10 @@ alias shared="kubectl config use-context shared"
 alias tf="terraform"
 alias vim="nvim"
 alias finder="open ."
+cc() {
+  [[ -n "$TMUX" ]] && tmux rename-window "$1"
+  claude --name "$@"
+}
 alias note='echo "- $*" >> ~/notes/$(date +%Y-%m-%d).md'
 
 DEFAULT_USER=miles
