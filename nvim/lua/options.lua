@@ -61,10 +61,11 @@ vim.opt.cursorline = true
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
 
--- Correctly detect Terraform files
+-- Correctly detect Terraform files and Avro schemas
 vim.filetype.add {
   extension = {
     tf = 'terraform',
+    avsc = 'json',
   },
 }
 
