@@ -26,6 +26,7 @@ brew "kubernetes-cli"
 # Terminal & editor
 brew "neovim"
 brew "tmux"
+brew "tree-sitter-cli"
 
 # macOS
 brew "nikitabobko/tap/aerospace"
