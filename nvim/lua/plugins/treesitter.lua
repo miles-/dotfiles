@@ -1,5 +1,5 @@
 return {
-  {
+  { -- Highlight, edit, and navigate code
     'nvim-treesitter/nvim-treesitter',
     branch = 'main',
     lazy = false,
@@ -8,18 +8,39 @@ return {
       require('nvim-treesitter').install {
         'bash',
         'c',
+        'csv',
         'diff',
+        'dockerfile',
+        'git_config',
+        'git_rebase',
+        'gitattributes',
+        'gitcommit',
+        'gitignore',
+        'go',
         'hcl',
+        'helm',
         'html',
+        'javascript',
+        'json',
         'latex',
         'lua',
         'luadoc',
+        'make',
         'markdown',
         'markdown_inline',
+        'python',
         'query',
+        'requirements',
+        'ruby',
+        'sql',
         'terraform',
+        'tmux',
+        'toml',
+        'typescript',
         'vim',
         'vimdoc',
+        'xml',
+        'yaml',
       }
 
       vim.api.nvim_create_autocmd('FileType', {
