@@ -5,6 +5,8 @@ return {
     lazy = false,
     build = ':TSUpdate',
     config = function()
+      -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
+
       require('nvim-treesitter').install {
         'bash',
         'c',
@@ -53,6 +55,12 @@ return {
           end
         end,
       })
+
+      -- There are additional nvim-treesitter plugins that you can use to interact
+      -- with nvim-treesitter. You should go explore a few and see what interests you:
+      --
+      --    - Show your current context: https://github.com/nvim-treesitter/nvim-treesitter-context
+      --    - Treesitter + textobjects: https://github.com/nvim-treesitter/nvim-treesitter-textobjects
     end,
   },
 }
