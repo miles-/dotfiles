@@ -1,18 +1,22 @@
 #!/usr/bin/env sh
 
-# Get Wi-Fi network information
-WI_FI_INFO=$(networksetup -listallhardwareports | awk '/Wi-Fi/{getline; print $2}')
+# Interface backing the current default route (the connection actually in use)
+DEFAULT_IF=$(route -n get default 2>/dev/null | awk '/interface:/{print $2}')
 
-# Get the current Wi-Fi network
-CURRENT_NETWORK=$(echo "$WI_FI_INFO" | xargs networksetup -getairportnetwork | sed "s/Current Wi-Fi Network: //")
+# Hardware port name for Wi-Fi (usually en0, but resolve it to be safe)
+WIFI_IF=$(networksetup -listallhardwareports | awk '/Wi-Fi/{getline; print $2}')
 
-# Check if the current network is associated with an airport network
-if echo "$CURRENT_NETWORK" | grep -q "You are not associated with an AirPort network"; then
-    LABEL="N/A"
-    sketchybar --set net_logo background.color=0xff3C3E4F --set net label.color=0xff1e1d2e
+if [ -z "$DEFAULT_IF" ]; then
+    ICON="󰤭"        # wifi off
+    LABEL="Offline"
+elif [ "$DEFAULT_IF" = "$WIFI_IF" ]; then
+    # The SSID is masked by endpoint security tooling on this managed Mac,
+    # so just show the connection type rather than the network name.
+    ICON="󰖩"        # wifi
+    LABEL="Wi-Fi"
 else
-    sketchybar --set net_logo background.color=0xffE0A3AD --set net label.color=0xffECEFF4 
-    LABEL=$(echo "$CURRENT_NETWORK")
+    ICON="󰈁"        # ethernet
+    LABEL="Ethernet"
 fi
 
-sketchybar --set "$NAME" label="$LABEL"
+sketchybar --set "$NAME" icon="$ICON" label="$LABEL"
