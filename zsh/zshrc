@@ -146,7 +146,7 @@ function stopwatch() {
   start=$(date +%s)
   while true; do
       time="$(($(date +%s) - $start))"
-      printf '%s\r' "$(date -u -d "@$time" +%H:%M:%S)"
+      printf '%02d:%02d:%02d\r' $((time / 3600)) $((time % 3600 / 60)) $((time % 60))
   done
 }
 
