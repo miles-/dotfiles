@@ -1,7 +1,13 @@
-.PHONY: aerospace alacritty bin brew check dunst font i3 linux mac mako nvim sketchybar spotify sway tmux waybar x zsh
+.PHONY: aerospace alacritty bin brew check deps dunst font i3 linux mac mako nvim sketchybar spotify sway tmux waybar x zsh
 
 brew:
 	brew bundle
+
+# Bootstrap external dependencies not managed by symlinks or brew
+deps:
+	[ -d ${HOME}/.oh-my-zsh ] || git clone https://github.com/ohmyzsh/ohmyzsh.git ${HOME}/.oh-my-zsh
+	[ -d ${HOME}/.oh-my-zsh/custom/plugins/zsh-autosuggestions ] || git clone https://github.com/zsh-users/zsh-autosuggestions ${HOME}/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+	[ -d ${HOME}/.tmux/plugins/tpm ] || git clone https://github.com/tmux-plugins/tpm ${HOME}/.tmux/plugins/tpm
 
 aerospace:
 	ln -fs $(CURDIR)/aerospace/aerospace.toml ${HOME}/.aerospace.toml
@@ -37,9 +43,9 @@ i3:
 	ln -fs $(CURDIR)/i3/config ${HOME}/.config/i3/config
 	ln -fs $(CURDIR)/i3/i3status ${HOME}/.config/i3status/config
 
-linux: alacritty bin dunst font i3 mako nvim spotify sway tmux waybar x zsh
+linux: deps alacritty bin dunst font i3 mako nvim spotify sway tmux waybar x zsh
 
-mac: brew aerospace alacritty nvim sketchybar tmux zsh
+mac: brew deps aerospace alacritty nvim sketchybar tmux zsh
 
 mako:
 	mkdir -p ${HOME}/.config/mako
