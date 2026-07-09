@@ -176,7 +176,7 @@ return {
         pyright = {},
         ruby_lsp = {},
         rust_analyzer = {},
-        sqls = {},
+        sqlls = {},
         terraformls = {},
         tflint = {},
         yamlls = {},
