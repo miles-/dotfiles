@@ -1,24 +1,3 @@
-[submodule "oh-my-zsh"]
-	path = oh-my-zsh
-	url = https://github.com/robbyrussell/oh-my-zsh
-[submodule "vim/bundle/vim-colors-solarized"]
-	path = vim/bundle/vim-colors-solarized
-	url = git@github.com:altercation/vim-colors-solarized.git
-[submodule "vim/bundle/vim-fugitive"]
-	path = vim/bundle/vim-fugitive
-	url = git@github.com:tpope/vim-fugitive.git
-[submodule "vim/colors/bundle/dracula-theme"]
-	path = vim/colors/bundle/dracula-theme
-	url = git@github.com:dracula/vim.git
-[submodule "vim/undle/fzf.vim"]
-	path = vim/undle/fzf.vim
-	url = git@github.com:junegunn/fzf.vim.git
-[submodule "bundle/vim-better-whitespace"]
-	path = bundle/vim-better-whitespace
-	url = git@github.com:ntpeters/vim-better-whitespace.git
-[submodule "bundle/syntastic"]
-	path = bundle/syntastic
-	url = git@github.com:vim-syntastic/syntastic.git
 [submodule "alacritty/catppuccin"]
 	path = alacritty/catppuccin
 	url = https://github.com/catppuccin/alacritty
