@@ -57,7 +57,14 @@ plugins=(aws git battery kubectl zsh-autosuggestions fzf kube-ps1 asdf)
 export GOPATH=~/go
 
 source $ZSH/oh-my-zsh.sh
-source <(helm completion zsh)
+# helm completion: cached to avoid running helm on every shell startup
+if command -v helm >/dev/null; then
+  if [[ ! -f ~/.cache/helm-completion.zsh ]]; then
+    mkdir -p ~/.cache
+    helm completion zsh > ~/.cache/helm-completion.zsh
+  fi
+  source ~/.cache/helm-completion.zsh
+fi
 if [[ $(uname) == "Linux" ]]; then
   source /opt/kube-ps1/kube-ps1.sh
 elif [[ $(uname) == "Darwin" ]]; then
@@ -139,7 +146,7 @@ function stopwatch() {
   start=$(date +%s)
   while true; do
       time="$(($(date +%s) - $start))"
-      printf '%s\r' "$(date -u -d "@$time" +%H:%M:%S)"
+      printf '%02d:%02d:%02d\r' $((time / 3600)) $((time % 3600 / 60)) $((time % 60))
   done
 }
 
@@ -152,18 +159,12 @@ fi
 export GTK_THEME="Catppuccin-Mocha"
 export XDG_SCREENSHOTS_DIR=~/screenshots
 
-export HISTFILESIZE=1000000000
-export HISTSIZE=1000000000
+HISTSIZE=1000000000
+SAVEHIST=1000000000
 setopt INC_APPEND_HISTORY
-export HISTTIMEFORMAT="[%F %T] "
 setopt EXTENDED_HISTORY
 setopt HIST_FIND_NO_DUPS
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
 [ -f ~/.secrets ] && source ~/.secrets
 export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
-export PATH="~/.local/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"

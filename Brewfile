@@ -3,6 +3,7 @@ tap "felixkratz/formulae"
 
 # CLI utilities
 brew "btop"
+brew "fd"
 brew "fzf"
 brew "gh"
 brew "jq"
@@ -12,10 +13,7 @@ brew "tree"
 brew "watch"
 brew "wget"
 
-# Languages & runtimes
-brew "go"
-brew "node"
-brew "python@3.12"
+# Languages & runtimes are managed by asdf
 
 # Kubernetes / DevOps
 brew "asdf"
