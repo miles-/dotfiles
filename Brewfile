@@ -3,6 +3,7 @@ tap "felixkratz/formulae"
 
 # CLI utilities
 brew "btop"
+brew "fd"
 brew "fzf"
 brew "gh"
 brew "jq"
