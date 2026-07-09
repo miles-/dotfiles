@@ -57,7 +57,14 @@ plugins=(aws git battery kubectl zsh-autosuggestions fzf kube-ps1 asdf)
 export GOPATH=~/go
 
 source $ZSH/oh-my-zsh.sh
-source <(helm completion zsh)
+# helm completion: cached to avoid running helm on every shell startup
+if command -v helm >/dev/null; then
+  if [[ ! -f ~/.cache/helm-completion.zsh ]]; then
+    mkdir -p ~/.cache
+    helm completion zsh > ~/.cache/helm-completion.zsh
+  fi
+  source ~/.cache/helm-completion.zsh
+fi
 if [[ $(uname) == "Linux" ]]; then
   source /opt/kube-ps1/kube-ps1.sh
 elif [[ $(uname) == "Darwin" ]]; then
