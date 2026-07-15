@@ -1,4 +1,4 @@
-.PHONY: aerospace alacritty bin brew check deps dunst font i3 linux mac mako nvim sketchybar spotify sway tmux waybar x zsh
+.PHONY: aerospace alacritty bat bin brew check deps dunst font i3 linux mac mako nvim sketchybar spotify sway tmux waybar x zsh
 
 brew:
 	brew bundle
@@ -18,6 +18,12 @@ alacritty:
 	mkdir -p ${HOME}/.config/alacritty/catppuccin
 	ln -fs $(CURDIR)/alacritty/alacritty.toml ${HOME}/.config/alacritty/alacritty.toml
 	ln -fs $(CURDIR)/alacritty/catppuccin/catppuccin-mocha.toml ${HOME}/.config/alacritty/catppuccin/catppuccin-mocha.toml
+
+bat:
+	mkdir -p ${HOME}/.config/bat
+	ln -fs $(CURDIR)/bat/config ${HOME}/.config/bat/config
+	ln -fns $(CURDIR)/bat/catppuccin/themes ${HOME}/.config/bat/themes
+	bat cache --build
 
 bin:
 	mkdir -p ${HOME}/bin
@@ -46,7 +52,7 @@ i3:
 
 linux: deps alacritty bin dunst font i3 mako nvim spotify sway tmux waybar x zsh
 
-mac: brew deps aerospace alacritty nvim sketchybar tmux zsh
+mac: brew deps aerospace alacritty bat nvim sketchybar tmux zsh
 
 mako:
 	mkdir -p ${HOME}/.config/mako
@@ -105,6 +111,8 @@ check:
 	check $(CURDIR)/aerospace/aerospace.toml ${HOME}/.aerospace.toml; \
 	check $(CURDIR)/alacritty/alacritty.toml ${HOME}/.config/alacritty/alacritty.toml; \
 	check $(CURDIR)/alacritty/catppuccin/catppuccin-mocha.toml ${HOME}/.config/alacritty/catppuccin/catppuccin-mocha.toml; \
+	check $(CURDIR)/bat/config ${HOME}/.config/bat/config; \
+	check $(CURDIR)/bat/catppuccin/themes ${HOME}/.config/bat/themes; \
 	check $(CURDIR)/nvim/lua ${HOME}/.config/nvim/lua; \
 	check $(CURDIR)/nvim/init.lua ${HOME}/.config/nvim/init.lua; \
 	check $(CURDIR)/nvim/lazy-lock.json ${HOME}/.config/nvim/lazy-lock.json; \
