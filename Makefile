@@ -122,3 +122,4 @@ check:
 	check $(CURDIR)/zsh/zprofile ${HOME}/.zprofile; \
 	check $(CURDIR)/zsh/zshrc ${HOME}/.zshrc; \
 	echo ""; echo "$$ok ok, $$fail failed"
+	@command -v brew >/dev/null && HOMEBREW_BUNDLE_NO_UPGRADE=1 brew bundle check --verbose || true
