@@ -2,6 +2,7 @@ tap "nikitabobko/tap"
 tap "felixkratz/formulae"
 
 # CLI utilities
+brew "bat"
 brew "btop"
 brew "fd"
 brew "fzf"
@@ -12,6 +13,7 @@ brew "speedtest-cli"
 brew "tree"
 brew "watch"
 brew "wget"
+brew "zoxide"
 
 # Languages & runtimes are managed by asdf
 
