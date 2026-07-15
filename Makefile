@@ -1,4 +1,4 @@
-.PHONY: aerospace alacritty bin brew check deps dunst font i3 linux mac mako nvim sketchybar spotify sway tmux waybar x zsh
+.PHONY: aerospace alacritty bat bin brew check deps dunst font i3 linux mac mako nvim sketchybar spotify sway tmux waybar x zsh
 
 brew:
 	brew bundle
@@ -7,6 +7,7 @@ brew:
 deps:
 	[ -d ${HOME}/.oh-my-zsh ] || git clone https://github.com/ohmyzsh/ohmyzsh.git ${HOME}/.oh-my-zsh
 	[ -d ${HOME}/.oh-my-zsh/custom/plugins/zsh-autosuggestions ] || git clone https://github.com/zsh-users/zsh-autosuggestions ${HOME}/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+	[ -d ${HOME}/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting ] || git clone https://github.com/zsh-users/zsh-syntax-highlighting ${HOME}/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 	[ -d ${HOME}/.tmux/plugins/tpm ] || git clone https://github.com/tmux-plugins/tpm ${HOME}/.tmux/plugins/tpm
 
 aerospace:
@@ -17,6 +18,12 @@ alacritty:
 	mkdir -p ${HOME}/.config/alacritty/catppuccin
 	ln -fs $(CURDIR)/alacritty/alacritty.toml ${HOME}/.config/alacritty/alacritty.toml
 	ln -fs $(CURDIR)/alacritty/catppuccin/catppuccin-mocha.toml ${HOME}/.config/alacritty/catppuccin/catppuccin-mocha.toml
+
+bat:
+	mkdir -p ${HOME}/.config/bat
+	ln -fs $(CURDIR)/bat/config ${HOME}/.config/bat/config
+	ln -fns $(CURDIR)/bat/catppuccin/themes ${HOME}/.config/bat/themes
+	bat cache --build
 
 bin:
 	mkdir -p ${HOME}/bin
@@ -45,7 +52,7 @@ i3:
 
 linux: deps alacritty bin dunst font i3 mako nvim spotify sway tmux waybar x zsh
 
-mac: brew deps aerospace alacritty nvim sketchybar tmux zsh
+mac: brew deps aerospace alacritty bat nvim sketchybar tmux zsh
 
 mako:
 	mkdir -p ${HOME}/.config/mako
@@ -104,6 +111,8 @@ check:
 	check $(CURDIR)/aerospace/aerospace.toml ${HOME}/.aerospace.toml; \
 	check $(CURDIR)/alacritty/alacritty.toml ${HOME}/.config/alacritty/alacritty.toml; \
 	check $(CURDIR)/alacritty/catppuccin/catppuccin-mocha.toml ${HOME}/.config/alacritty/catppuccin/catppuccin-mocha.toml; \
+	check $(CURDIR)/bat/config ${HOME}/.config/bat/config; \
+	check $(CURDIR)/bat/catppuccin/themes ${HOME}/.config/bat/themes; \
 	check $(CURDIR)/nvim/lua ${HOME}/.config/nvim/lua; \
 	check $(CURDIR)/nvim/init.lua ${HOME}/.config/nvim/init.lua; \
 	check $(CURDIR)/nvim/lazy-lock.json ${HOME}/.config/nvim/lazy-lock.json; \
@@ -113,3 +122,4 @@ check:
 	check $(CURDIR)/zsh/zprofile ${HOME}/.zprofile; \
 	check $(CURDIR)/zsh/zshrc ${HOME}/.zshrc; \
 	echo ""; echo "$$ok ok, $$fail failed"
+	@command -v brew >/dev/null && HOMEBREW_BUNDLE_NO_UPGRADE=1 brew bundle check --verbose || true
