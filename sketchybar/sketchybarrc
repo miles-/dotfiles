@@ -39,13 +39,19 @@ sketchybar --add event aerospace_workspace_change
 
 for sid in $(aerospace list-workspaces --all); do
     sketchybar --add item space.$sid left \
-        --subscribe space.$sid aerospace_workspace_change \
         --set space.$sid \
         drawing=off \
         label="$sid" \
-        click_script="aerospace workspace $sid" \
-        script="$CONFIG_DIR/plugins/aerospace.sh $sid"
+        click_script="aerospace workspace $sid"
 done
+
+# One hidden item drives every workspace label, so a workspace change costs a
+# single batched sketchybar call. AeroSpace reports no window move and no window
+# close, so a slow poll keeps the empty-workspace labels honest.
+sketchybar --add item spaces_watcher left \
+           --set spaces_watcher drawing=off updates=on update_freq=5 \
+           script="$PLUGIN_DIR/aerospace.sh" \
+           --subscribe spaces_watcher aerospace_workspace_change front_app_switched system_woke
 
 
 sketchybar --add item front_app left \
@@ -64,8 +70,17 @@ sketchybar --add item clock right \
            --add item network right \
            --set network update_freq=5 script="$PLUGIN_DIR/network.sh" \
            --subscribe network wifi_change system_woke
-#           --set spotify update_freq=1 icon= icon.color=0xff1db954 script="$PLUGIN_DIR/spotify_indicator.sh" \
-#           --add item spotify right
+
+# Spotify posts this notification on every play, pause and track change, so the
+# item is event driven. update_freq is only a safety net, because Spotify posts
+# nothing when it quits.
+sketchybar --add event spotify_change com.spotify.client.PlaybackStateChanged
+
+sketchybar --add item spotify right \
+           --set spotify drawing=off icon= icon.color=0xff1db954 \
+           label.max_chars=40 scroll_texts=on update_freq=10 \
+           script="$PLUGIN_DIR/spotify_indicator.sh" \
+           --subscribe spotify spotify_change
 
 ##### Force all scripts to run the first time (never do this in a script) #####
 sketchybar --update

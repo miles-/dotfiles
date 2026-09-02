@@ -1,24 +1,30 @@
 #!/usr/bin/env sh
-RUNNING=$(osascript -e 'if application "Spotify" is running then return 0')
-if [ "$RUNNING" == "" ]; then
-  RUNNING=1
+
+# Spotify posts com.spotify.client.PlaybackStateChanged on every play, pause and
+# track change, so this item is event driven and needs no fast poll.
+
+# Guard on the process list first. A tell block would launch Spotify if it is
+# not already running.
+if ! pgrep -x Spotify >/dev/null 2>&1; then
+  sketchybar --set "$NAME" drawing=off
+  exit 0
 fi
-PLAYING=1
-TRACK=""
-ALBUM=""
-ARTIST=""
-if [ "$(osascript -e 'if application "Spotify" is running then tell application "Spotify" to get player state')" == "playing" ]; then
-  PLAYING=0
-  TRACK=$(osascript -e 'tell application "Spotify" to get name of current track')
-  ARTIST=$(osascript -e 'tell application "Spotify" to get artist of current track')
-  ALBUM=$(osascript -e 'tell application "Spotify" to get album of current track')
-fi
-if [ $RUNNING -eq 0 ] && [ $PLAYING -eq 0 ]; then
-  if [ "$ARTIST" == "" ]; then
-    sketchybar --set $NAME label="$TRACK - $ALBUM" --set '/spot.*/' drawing=on
-  else
-    sketchybar --set $NAME label="$TRACK - $ARTIST" --set '/spot.*/' drawing=on
-  fi
+
+# One osascript call returns the whole label. Spotify reports no artist for a
+# podcast, so fall back to the album, as the previous script did.
+TRACK="$(osascript <<'OSA'
+tell application "Spotify"
+  if player state is not playing then return ""
+  set trackName to name of current track
+  set byLine to artist of current track
+  if byLine is "" then set byLine to album of current track
+  return trackName & " - " & byLine
+end tell
+OSA
+)"
+
+if [ -z "$TRACK" ]; then
+  sketchybar --set "$NAME" drawing=off
 else
-  sketchybar --set '/spot.*/' drawing=off
+  sketchybar --set "$NAME" drawing=on label="$TRACK"
 fi
